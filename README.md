@@ -29,6 +29,16 @@ Ces règles sont la base du projet. Toute contribution doit les respecter.
 
 Transitions : la lumière se referme en étoile à 8 branches, avec des intertitres (« Douze ans plus tard… »).
 
+## Installer sur ton téléphone
+
+À chaque mise à jour de `main`, GitHub compile automatiquement l'APK et le publie dans la release **Aperçu** :
+
+1. Sur ton téléphone, ouvre la page *Releases* du dépôt, puis **Aperçu (dernière version)**.
+2. Télécharge `siraj.apk` et ouvre-le.
+3. Si Android le demande, autorise l'installation depuis cette source.
+
+C'est un APK de test, signé avec une clé de debug.
+
 ## Lancer le projet
 
 1. Installer [Godot 4.3](https://godotengine.org/download) (version standard, pas .NET).

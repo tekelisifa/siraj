@@ -6,3 +6,4 @@ export_credentials.cfg
 *.apk
 *.aab
 *.keystore
+build/
