@@ -32,6 +32,11 @@ const LEXICON := {
 	"amin": {"ar": "الْأَمِين", "lat": "Al-Amîn", "fr": "Le digne de confiance"},
 	"allahu_akbar": {"ar": "اللّٰهُ أَكْبَرُ", "lat": "Allâhu akbar", "fr": "Dieu est le plus grand"},
 	"adhan": {"ar": "الْأَذَان", "lat": "Al-adhân", "fr": "L'appel à la prière"},
+	"nour": {"ar": "نُور", "lat": "Nûr", "fr": "La lumière"},
+	"kaaba": {"ar": "الْكَعْبَة", "lat": "Al-Kaʿba", "fr": "La Kaaba, la maison de Dieu"},
+	"tamr": {"ar": "تَمْر", "lat": "Tamr", "fr": "Des dattes"},
+	"zamzam": {"ar": "زَمْزَم", "lat": "Zamzam", "fr": "La source de Zamzam"},
+	"jamal": {"ar": "جَمَل", "lat": "Jamal", "fr": "Le chameau"},
 }
 
 var font_body: FontFile
@@ -42,7 +47,8 @@ var theme: Theme
 var sound_ack := false
 var subtitles := true
 var voice_on := true
-var voice_index := 0
+var storyteller_voices: Array[String] = []
+var storyteller_choice := 2
 var words: Array[String] = []
 
 
@@ -143,7 +149,8 @@ func save_game() -> void:
 	cfg.set_value("options", "sound_ack", sound_ack)
 	cfg.set_value("options", "subtitles", subtitles)
 	cfg.set_value("options", "voice_on", voice_on)
-	cfg.set_value("options", "voice_index", voice_index)
+	cfg.set_value("options", "storyteller_voices", storyteller_voices)
+	cfg.set_value("options", "storyteller_choice", storyteller_choice)
 	cfg.set_value("progress", "words", words)
 	cfg.save(SAVE_PATH)
 
@@ -155,7 +162,11 @@ func load_game() -> void:
 	sound_ack = cfg.get_value("options", "sound_ack", false)
 	subtitles = cfg.get_value("options", "subtitles", true)
 	voice_on = cfg.get_value("options", "voice_on", true)
-	voice_index = cfg.get_value("options", "voice_index", 0)
+	storyteller_choice = cfg.get_value("options", "storyteller_choice", 2)
+	var sv: Array = cfg.get_value("options", "storyteller_voices", [])
+	storyteller_voices.clear()
+	for v in sv:
+		storyteller_voices.append(str(v))
 	var saved: Array = cfg.get_value("progress", "words", [])
 	words.clear()
 	for w in saved:

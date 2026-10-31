@@ -68,6 +68,16 @@ func _draw() -> void:
 		var a := 0.4 + 0.5 * sin(time * 1.5 + i)
 		draw_circle(p, rng.randf_range(0.8, 2.2), Color(Game.SAND, a * 0.8))
 	Art.crescent(self, Vector2(w * 0.8, h * 0.09), 34.0, Game.GOLD_LIGHT, Game.NIGHT_DEEP)
+	# Étoile filante, toutes les 7 secondes environ.
+	var st := fmod(time, 7.0)
+	if st < 0.9:
+		var k := floorf(time / 7.0)
+		var start := Vector2(w * (0.15 + fmod(k * 0.37, 0.5)), h * (0.03 + fmod(k * 0.13, 0.1)))
+		var head := start + Vector2(260.0, 110.0) * (st / 0.9)
+		var a := sin(st / 0.9 * PI)
+		for j in 6:
+			var t := j / 6.0
+			draw_line(head - Vector2(90.0, 38.0) * t, head - Vector2(90.0, 38.0) * (t + 1.0 / 6.0), Color(Game.SAND, a * (1.0 - t)), 2.0, true)
 
 	# Guirlande de lanternes.
 	var y0 := h * 0.2
@@ -102,6 +112,11 @@ func _draw() -> void:
 	draw_colored_polygon(PackedVector2Array([fire + Vector2(-28, 0), fire + Vector2(4 - f * 5.0, -72 + f * 10.0), fire + Vector2(28, 0)]), Game.FLAME)
 	draw_colored_polygon(PackedVector2Array([fire + Vector2(-12, 0), fire + Vector2(0, -36 - f * 6.0), fire + Vector2(12, 0)]), Game.FLAME_CORE)
 	draw_rect(Rect2(fire + Vector2(-60, -6), Vector2(120, 14)), Color("5c3a1e"))
+	# Fumée qui monte doucement.
+	for i in 6:
+		var t := fmod(time * 0.25 + i / 6.0, 1.0)
+		var sp := fire + Vector2(sin(time * 0.7 + i * 1.7) * 18.0 + t * 30.0, -120.0 - t * 260.0)
+		draw_circle(sp, 14.0 + t * 30.0, Color(0.75, 0.78, 0.85, 0.12 * (1.0 - t)))
 
 	# Le conteur (vieil homme) et l'enfant, éclairés par le feu.
 	var robe := Color("2b3e5c")

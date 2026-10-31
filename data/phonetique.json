@@ -1,0 +1,42 @@
+{
+	"_aide": "Prononciation des mots arabes pour les voix de synthèse. 'mots' : remplacements appliqués d'abord, du plus long au plus court. 'lettres' : règle générale appliquée ensuite, seulement aux mots arabes (mots contenant ʿ ou ʾ, noms propres avec â/î/û, et 'particules'), pour ne pas abîmer le français (âge, bâtie…). 'arabe' : passages lus en mode arabe par le générateur de voix (Chatterbox), à partir du vrai texte arabe.",
+	"mots": [
+		["As-salâmu ʿalaykum", "Assalamou aleykoum"],
+		["Wa ʿalaykumu s-salâm", "Wa aleykoumou ssalam"],
+		["radiyAllâhu ʿanhu", "radiyallahou anhou"],
+		["Alhamdulillâh", "Al hamdou lillah"],
+		["Jabal an-Nour", "Djabal an Nour"],
+		["ʿAbdallâh", "Abdallah"],
+		["Bismillâh", "Bismillah"],
+		["Ibrâhîm", "Ibrahim"],
+		["Ismâʿîl", "Ismaïl"],
+		["Muhammad", "Mouhammad"],
+		["Oumm Nour", "Oum Nour"],
+		["Al-Amîn", "Al Amine"],
+		["yâ Selîm", "ya Sélim"],
+		["Jibrîl", "Djibril"],
+		["Selîm", "Sélim"],
+		["Selim", "Sélim"],
+		["Jaddî", "Djaddi"],
+		["Iqraʾ", "Ikra"],
+		["ﷺ", ", sallallahou aleyhi wa sallam,"]
+	],
+	"lettres": [
+		["â", "a"], ["î", "i"], ["û", "ou"],
+		["Â", "A"], ["Î", "I"], ["Û", "Ou"],
+		["ʿ", ""], ["ʾ", ""]
+	],
+	"particules": ["yâ", "lâ", "fî", "bî", "wâ"],
+	"arabe": [
+		["As-salâmu ʿalaykum", "السَّلَامُ عَلَيْكُمْ"],
+		["Wa ʿalaykumu s-salâm", "وَعَلَيْكُمُ السَّلَامُ"],
+		["radiyAllâhu ʿanhu", "رَضِيَ اللّٰهُ عَنْهُ"],
+		["Alhamdulillâh", "الْحَمْدُ لِلّٰهِ"],
+		["Jabal an-Nour", "جَبَلُ النُّور"],
+		["Bismillâh", "بِسْمِ اللّٰهِ"],
+		["yâ Selîm", "يَا سَلِيم"],
+		["Jaddî", "جَدِّي"],
+		["Iqraʾ", "اقْرَأْ"],
+		["ﷺ", "صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ"]
+	]
+}

@@ -7,3 +7,4 @@ export_credentials.cfg
 *.aab
 *.keystore
 build/
+__pycache__/

@@ -145,9 +145,9 @@ func _toggle_carnet() -> void:
 
 func _refresh_voice_btns() -> void:
 	_voice_btn.text = "Voix : activée" if Game.voice_on else "Voix : coupée"
-	var n := Audio.tts_voices.size()
+	var n := Audio.storyteller_candidates().size()
 	if n > 1:
-		_next_voice_btn.text = "Changer de voix (%d/%d)" % [clampi(Game.voice_index, 0, n - 1) + 1, n]
+		_next_voice_btn.text = "Voix du conteur %d/%d" % [clampi(Game.storyteller_choice, 0, n - 1) + 1, n]
 	else:
 		_next_voice_btn.text = "Écouter la voix"
 
@@ -163,15 +163,16 @@ func _toggle_voice() -> void:
 
 
 func _next_voice() -> void:
-	if Audio.tts_voices.is_empty():
+	var c := Audio.storyteller_candidates()
+	if c.is_empty():
 		_show_toast("Aucune voix de synthèse française sur ce téléphone")
 		return
-	if not Game.voice_on:
-		Game.voice_on = true
-	if Audio.tts_voices.size() > 1:
-		Game.voice_index = (Game.voice_index + 1) % Audio.tts_voices.size()
+	Game.voice_on = true
+	if c.size() > 1:
+		Game.storyteller_choice = (clampi(Game.storyteller_choice, 0, c.size() - 1) + 1) % c.size()
 	Game.save_game()
 	_refresh_voice_btns()
+	_show_toast(Audio.voice_label(Audio.current_voice()))
 	Audio.speak("Le conteur", VOICE_SAMPLE)
 
 

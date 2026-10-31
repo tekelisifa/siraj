@@ -22,10 +22,10 @@ Ces règles sont la base du projet. Toute contribution doit les respecter.
 |---|---|
 | Ouverture | Ciel étoilé et lampe, puis la frise des prophètes d'Âdam à Muhammad ﷺ, zoom sur sa vie (570-632), puis zoom sur « Tu es ici » : la Mecque, an 610 |
 | Son | Au premier lancement, invitation à mettre le casque (ou à garder les sous-titres) |
-| Menu | Lampe, titre, carnet de mots arabes, choix de la langue (français pour l'instant) |
-| La veillée | Un vieil homme raconte à un enfant, près du feu. Au dernier épisode, on découvrira que c'est Selim |
-| La Mecque, an 610 | Selim (10 ans) marche dans les ruelles, salue la voisine, découvre les mots *As-salâmu ʿalaykum*, *Bismillâh*, *Iqraʾ*… et entend parler de la grotte de Hira |
-| Médine, an 1 de l'Hégire | Selim (22 ans) monte sur le toit à l'aube. Le premier adhan s'élève au loin, le ciel s'éclaircit, les contrôles se figent |
+| Menu | Lampe, titre, carnet de mots arabes, réglage de la voix du conteur, choix de la langue (français pour l'instant) |
+| La veillée | Un vieil homme raconte à un enfant, près du feu (fumée, étincelles, étoiles filantes). Au dernier épisode, on découvrira que c'est Selim |
+| La Mecque, an 610 | Une ruelle à explorer, plus large que l'écran. Passants qui saluent, marchand, chat, chameau, linge au vent, poussière dorée. Petites lumières à toucher : Jabal an-Nour, la Kaaba, le marché, le puits, le chameau. La colombe guide Selim (10 ans) jusqu'à la voisine, Oumm Nour, qui lui parle de la grotte de Hira |
+| Médine, an 1 de l'Hégire | Selim (22 ans) monte sur le toit au coucher du soleil. Le premier adhan s'élève au loin : la nuit tombe, les lampes s'allument dans les maisons, les habitants sortent vers la mosquée. Les contrôles se figent, les sous-titres suivent la voix du muezzin |
 
 Transitions : la lumière se referme en étoile à 8 branches, avec des intertitres (« Douze ans plus tard… »).
 
@@ -77,34 +77,49 @@ Tous les décors sont dessinés en code : pas d'images à gérer pour l'instant,
 
 ### Les voix des personnages
 
-Chaque réplique est lue à voix haute :
+Chaque réplique est lue à voix haute, dans cet ordre de priorité :
 
-1. **Si un enregistrement existe** pour la réplique, le jeu le joue.
-2. **Sinon**, la voix de synthèse du téléphone la lit, avec un réglage par personnage : le conteur grave et lent, Selim et l'enfant plus aigus, la voisine entre les deux. Le menu permet de couper la voix ou d'essayer les autres voix installées sur le téléphone.
+1. **Un fichier de voix** existe pour la réplique (`audio/voix/<identifiant>.ogg`) : le jeu le joue.
+2. **Sinon**, la voix de synthèse du téléphone la lit. Le conteur utilise l'une des 3 voix retenues (la 3ᵉ par défaut), avec une hauteur et un rythme propres à chaque personnage.
 
-Pour enregistrer de vraies voix :
+Les mots arabes sont réécrits « à la française » pour être bien prononcés (`data/phonetique.json`). Les indications de jeu entre parenthèses ne sont pas lues.
 
-1. Ouvrir [`audio/voix/SCRIPT.md`](audio/voix/SCRIPT.md) : toutes les répliques, avec les indications de jeu et le nom de fichier de chacune.
-2. Enregistrer chaque réplique en `.ogg` (mono, 44,1 kHz) et la déposer dans `audio/voix/` sous ce nom.
-3. Si une réplique change dans le code, relancer `python3 tools/script_voix.py` : son nom de fichier change aussi.
+### Génération automatique des voix (Chatterbox)
 
-On peut enregistrer une seule voix (le conteur, par exemple) et laisser la synthèse pour les autres.
+GitHub génère tout seul les fichiers de voix avec [Chatterbox](https://github.com/resemble-ai/chatterbox), un modèle open source (licence MIT) :
+
+- **À chaque changement** des dialogues, de la phonétique ou des voix de référence, seules les répliques nouvelles ou modifiées sont générées. Puis l'APK est recompilé.
+- **Lecture franco-arabe** : les expressions arabes (*As-salâmu ʿalaykum*, *Bismillâh*, la formule ﷺ…) sont lues en mode arabe, à partir du vrai texte arabe.
+- **Régénérer une voix** depuis le téléphone : onglet *Actions* › *Voix (Chatterbox)* › *Run workflow*, puis indiquer `tout`, un personnage (`Le conteur`), ou des identifiants de [`audio/voix/SCRIPT.md`](audio/voix/SCRIPT.md).
+- **Voix de référence** : déposer un extrait de 10 à 20 secondes (une personne qui lit un texte, avec son accord) dans `audio/voix/reference/`, nommé `conteur`, `selim`, `enfant`, `voisine` ou `passant` (`.wav`, `.mp3` ou `.ogg`). Toutes les répliques du personnage sont régénérées avec ce timbre.
+- Sans voix de référence, la voix par défaut de Chatterbox est transposée pour distinguer les personnages (plus grave pour le conteur, plus aiguë pour les enfants).
+- **Un vrai enregistrement** déposé à la main sous le nom d'une réplique n'est jamais écrasé.
+
+La première génération prend du temps (les serveurs gratuits de GitHub n'ont pas de carte graphique). Les suivantes ne concernent que les changements.
+
+Pour lancer la génération sur son propre ordinateur : `pip install chatterbox-tts`, puis `cd tools && python3 generer_voix.py`.
+
+Chaque fichier généré par Chatterbox contient un filigrane audio inaudible (Resemble AI) qui l'identifie comme produit par IA.
+
+### L'adhan
+
+`audio/adhan.ogg` : adhan complet (3 min 36), en **Ogg Vorbis**. Godot ne lit pas l'Ogg Opus, même si l'extension est la même : convertir avec
+`ffmpeg -i entree.ogg -ac 1 -ar 44100 -c:a libvorbis -q:a 5 audio/adhan.ogg`.
+
+Les sous-titres suivent la position réelle de la lecture. Les débuts des 12 phrases ont été mesurés sur les respirations du muezzin (`PHRASE_TIMES` dans `scripts/scenes/aube.gd`) : à mettre à jour si l'enregistrement change.
+
+L'adhan n'est jamais lu par une voix de synthèse ni généré par une IA.
 
 ### Les autres sons
 
-Les ambiances (vent, feu, rumeur de la ville) sont générées par le jeu en attendant de vrais enregistrements.
-
-| Fichier | Contenu | À prévoir |
-|---|---|---|
-| `audio/adhan.ogg` | Un adhan complet, style traditionnel du Hijaz | Enregistré par un muezzin, avec une autorisation écrite d'utilisation |
-
-Les sous-titres de l'adhan se calent sur la durée du fichier. L'adhan n'est jamais lu par la voix de synthèse.
+Les ambiances (vent, feu, rumeur de la ville) et les bruitages (pas dans le sable, ailes de la colombe) sont générés par le jeu en attendant de vrais enregistrements.
 
 ## Points à faire valider par le relecteur
 
 - [ ] Faire entendre l'adhan dans la scène de Bilal (radiyAllâhu ʿanhu) : certains savants sont réservés sur l'imitation de la voix d'un Compagnon. Ici, l'adhan est présenté comme « tel que Bilal l'a appelé », pas comme sa voix.
-- [ ] La scène se passe à l'aube : faut-il ajouter *As-salâtu khayrun min an-nawm* au premier adhan ?
-- [ ] Les paroles de la voisine (fictive) sur la grotte de Hira et le mot *Iqraʾ*.
+- [ ] La scène du premier adhan se passe au coucher du soleil (Maghrib), car l'enregistrement est un adhan sans la formule de l'aube.
+- [ ] Les textes des lieux à découvrir à la Mecque (Jabal an-Nour, la Kaaba, le marché, Zamzam, le chameau).
+- [ ] Les paroles de la voisine (fictive, Oumm Nour) sur la grotte de Hira et le mot *Iqraʾ*.
 - [ ] Les dates de la frise (570, 610, 622, 632) et l'ordre des prophètes présentés.
 - [ ] Le nom du relecteur, à mettre à la place de `[NOM DU RELECTEUR]` dans le menu.
 
