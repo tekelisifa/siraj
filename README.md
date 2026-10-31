@@ -73,16 +73,32 @@ audio/                   enregistrements à ajouter (voir ci-dessous)
 
 Tous les décors sont dessinés en code : pas d'images à gérer pour l'instant, et le rendu reste net sur tous les écrans.
 
-## Sons à ajouter
+## Voix et sons
+
+### Les voix des personnages
+
+Chaque réplique est lue à voix haute :
+
+1. **Si un enregistrement existe** pour la réplique, le jeu le joue.
+2. **Sinon**, la voix de synthèse du téléphone la lit, avec un réglage par personnage : le conteur grave et lent, Selim et l'enfant plus aigus, la voisine entre les deux. Le menu permet de couper la voix ou d'essayer les autres voix installées sur le téléphone.
+
+Pour enregistrer de vraies voix :
+
+1. Ouvrir [`audio/voix/SCRIPT.md`](audio/voix/SCRIPT.md) : toutes les répliques, avec les indications de jeu et le nom de fichier de chacune.
+2. Enregistrer chaque réplique en `.ogg` (mono, 44,1 kHz) et la déposer dans `audio/voix/` sous ce nom.
+3. Si une réplique change dans le code, relancer `python3 tools/script_voix.py` : son nom de fichier change aussi.
+
+On peut enregistrer une seule voix (le conteur, par exemple) et laisser la synthèse pour les autres.
+
+### Les autres sons
 
 Les ambiances (vent, feu, rumeur de la ville) sont générées par le jeu en attendant de vrais enregistrements.
-Les fichiers ci-dessous sont lus automatiquement s'ils sont présents :
 
 | Fichier | Contenu | À prévoir |
 |---|---|---|
 | `audio/adhan.ogg` | Un adhan complet, style traditionnel du Hijaz | Enregistré par un muezzin, avec une autorisation écrite d'utilisation |
 
-Les sous-titres de l'adhan se calent sur la durée du fichier.
+Les sous-titres de l'adhan se calent sur la durée du fichier. L'adhan n'est jamais lu par la voix de synthèse.
 
 ## Points à faire valider par le relecteur
 
@@ -94,7 +110,7 @@ Les sous-titres de l'adhan se calent sur la durée du fichier.
 
 ## Prochaines étapes
 
-- Voix du conteur enregistrée, en français, turc et arabe
+- Voix enregistrées (voir `audio/voix/SCRIPT.md`), puis en turc et en arabe
 - Traductions turque et arabe de l'interface et des dialogues
 - Épisodes suivants : l'année de l'Éléphant racontée à la veillée, Al-Amîn, l'Hégire, l'arrivée à Médine…
 - Coffret de souvenirs (objets trouvés en explorant)

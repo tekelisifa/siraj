@@ -6,6 +6,10 @@ var _toast: Label
 var _carnet: PanelContainer
 var _carnet_list: VBoxContainer
 var _carnet_btn: Button
+var _voice_btn: Button
+var _next_voice_btn: Button
+
+const VOICE_SAMPLE := "Approche, mon petit. Je vais te raconter ce que mes yeux ont vu."
 
 
 func _ready() -> void:
@@ -14,12 +18,12 @@ func _ready() -> void:
 	var vs := get_viewport_rect().size
 
 	var title := UI.vbox(0)
-	UI.dock_top(title, 40, int(vs.y * 0.235))
+	UI.dock_top(title, 40, int(vs.y * 0.17))
 	root.add_child(title)
 	title.add_child(UI.label("سِرَاج", 72, Game.GOLD_LIGHT, Game.font_arabic))
-	title.add_child(UI.label("Sirâj", 104, Game.SAND, Game.font_title))
+	title.add_child(UI.label("Sirâj", 96, Game.SAND, Game.font_title))
 	title.add_child(UI.label("Le voyage de Selim", 42, Game.GOLD_LIGHT, Game.font_title))
-	var sub := UI.label("La vie du Prophète Muhammad ﷺ, racontée par un témoin", 26, Game.MUTED)
+	var sub := UI.label("La vie du Prophète Muhammad ﷺ, racontée par un témoin", 24, Game.MUTED)
 	title.add_child(sub)
 	UI.fade_in(title, 1.0)
 
@@ -36,13 +40,34 @@ func _ready() -> void:
 	buttons.add_child(row)
 	_carnet_btn = UI.button("", false)
 	_carnet_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_carnet_btn.custom_minimum_size = Vector2(0, 80)
+	_carnet_btn.add_theme_font_size_override("font_size", 26)
 	_carnet_btn.pressed.connect(_toggle_carnet)
 	row.add_child(_carnet_btn)
 	var replay := UI.button("Revoir l'ouverture", false)
 	replay.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	replay.custom_minimum_size = Vector2(0, 80)
+	replay.add_theme_font_size_override("font_size", 26)
 	replay.pressed.connect(func() -> void: Transition.go("res://scenes/intro.tscn", Game.NIGHT_DEEP))
 	row.add_child(replay)
 	_refresh_carnet_btn()
+
+	var voice_row := HBoxContainer.new()
+	voice_row.add_theme_constant_override("separation", 16)
+	buttons.add_child(voice_row)
+	_voice_btn = UI.button("", false)
+	_voice_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_voice_btn.custom_minimum_size = Vector2(0, 80)
+	_voice_btn.add_theme_font_size_override("font_size", 26)
+	_voice_btn.pressed.connect(_toggle_voice)
+	voice_row.add_child(_voice_btn)
+	_next_voice_btn = UI.button("", false)
+	_next_voice_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_next_voice_btn.custom_minimum_size = Vector2(0, 80)
+	_next_voice_btn.add_theme_font_size_override("font_size", 26)
+	_next_voice_btn.pressed.connect(_next_voice)
+	voice_row.add_child(_next_voice_btn)
+	_refresh_voice_btns()
 
 	var langs := HBoxContainer.new()
 	langs.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -118,6 +143,38 @@ func _toggle_carnet() -> void:
 	UI.fade_in(_carnet, 0.3)
 
 
+func _refresh_voice_btns() -> void:
+	_voice_btn.text = "Voix : activée" if Game.voice_on else "Voix : coupée"
+	var n := Audio.tts_voices.size()
+	if n > 1:
+		_next_voice_btn.text = "Changer de voix (%d/%d)" % [clampi(Game.voice_index, 0, n - 1) + 1, n]
+	else:
+		_next_voice_btn.text = "Écouter la voix"
+
+
+func _toggle_voice() -> void:
+	Game.voice_on = not Game.voice_on
+	Game.save_game()
+	_refresh_voice_btns()
+	if Game.voice_on:
+		Audio.speak("Le conteur", VOICE_SAMPLE)
+	else:
+		Audio.stop_speech()
+
+
+func _next_voice() -> void:
+	if Audio.tts_voices.is_empty():
+		_show_toast("Aucune voix de synthèse française sur ce téléphone")
+		return
+	if not Game.voice_on:
+		Game.voice_on = true
+	if Audio.tts_voices.size() > 1:
+		Game.voice_index = (Game.voice_index + 1) % Audio.tts_voices.size()
+	Game.save_game()
+	_refresh_voice_btns()
+	Audio.speak("Le conteur", VOICE_SAMPLE)
+
+
 func _refresh_carnet_btn() -> void:
 	_carnet_btn.text = "Carnet de mots (%d)" % Game.words.size()
 
@@ -143,6 +200,6 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	var vs := get_viewport_rect().size
 	draw_rect(Rect2(Vector2.ZERO, vs), Game.NIGHT)
-	Art.star_pattern(self, Rect2(0, 0, vs.x, vs.y * 0.3), 72.0, Color(0.79, 0.64, 0.29, 0.18))
+	Art.star_pattern(self, Rect2(0, 0, vs.x, vs.y * 0.16), 72.0, Color(0.79, 0.64, 0.29, 0.18))
 	var flicker := sin(time * 7.0) * 0.5 + sin(time * 11.3) * 0.5
-	Art.lantern(self, Vector2(vs.x * 0.5, vs.y * 0.05 + sin(time * 0.8) * 4.0), 1.0, 1.0, flicker)
+	Art.lantern(self, Vector2(vs.x * 0.5, vs.y * 0.025 + sin(time * 0.8) * 4.0), 0.85, 1.0, flicker)

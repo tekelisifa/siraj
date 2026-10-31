@@ -134,6 +134,7 @@ func _remind_sound() -> void:
 
 func _adhan() -> void:
 	Input.vibrate_handheld(60)
+	Audio.stop_speech()
 	Audio.set_ambience("", 0.0)
 	_lock.visible = true
 	create_tween().tween_property(_lock, "modulate:a", 1.0, 0.6)

@@ -41,6 +41,8 @@ var theme: Theme
 
 var sound_ack := false
 var subtitles := true
+var voice_on := true
+var voice_index := 0
 var words: Array[String] = []
 
 
@@ -140,6 +142,8 @@ func save_game() -> void:
 	var cfg := ConfigFile.new()
 	cfg.set_value("options", "sound_ack", sound_ack)
 	cfg.set_value("options", "subtitles", subtitles)
+	cfg.set_value("options", "voice_on", voice_on)
+	cfg.set_value("options", "voice_index", voice_index)
 	cfg.set_value("progress", "words", words)
 	cfg.save(SAVE_PATH)
 
@@ -150,6 +154,8 @@ func load_game() -> void:
 		return
 	sound_ack = cfg.get_value("options", "sound_ack", false)
 	subtitles = cfg.get_value("options", "subtitles", true)
+	voice_on = cfg.get_value("options", "voice_on", true)
+	voice_index = cfg.get_value("options", "voice_index", 0)
 	var saved: Array = cfg.get_value("progress", "words", [])
 	words.clear()
 	for w in saved:

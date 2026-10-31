@@ -13,6 +13,10 @@ boot_splash/bg_color=Color(0.043, 0.082, 0.141, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[audio]
+
+general/text_to_speech=true
+
 [autoload]
 
 Game="*res://scripts/autoload/game.gd"

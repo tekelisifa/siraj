@@ -102,6 +102,7 @@ func show_text(who: String, text: String, words: Array = []) -> void:
 	_typing = create_tween()
 	_typing.tween_property(_body, "visible_ratio", 1.0, dur)
 	_typing.tween_callback(_show_hint)
+	Audio.speak(who, text)
 
 
 ## Propose des choix et renvoie l'indice choisi.
@@ -115,6 +116,7 @@ func ask(options: Array) -> int:
 		_choices.add_child(b)
 		UI.fade_in(b, 0.4, 0.15 * i)
 	var idx: int = await choice_made
+	Audio.stop_speech()
 	_has_choices = false
 	_clear(_choices)
 	return idx
@@ -158,4 +160,5 @@ func _gui_input(event: InputEvent) -> void:
 			_show_hint()
 		elif _waiting and not _has_choices:
 			_waiting = false
+			Audio.stop_speech()
 			advanced.emit()

@@ -41,6 +41,7 @@ func go(path: String, color: Color = Game.NIGHT_DEEP, caption := "", center := V
 	if busy:
 		return
 	busy = true
+	Audio.stop_speech()
 	_rect.mouse_filter = Control.MOUSE_FILTER_STOP
 	var size := get_viewport().get_visible_rect().size
 	_mat.set_shader_parameter("aspect", size.x / size.y)
