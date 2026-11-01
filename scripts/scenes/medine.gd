@@ -63,7 +63,7 @@ func _ready() -> void:
 		motes.append(Vector3(rng.randf() * vs.x, rng.randf() * vs.y * 0.75, rng.randf() * TAU))
 
 	var root := UI.layer(self)
-	var place := UI.label("Médine · an 1 de l'Hégire · Selim, 22 ans", 24, Game.INK)
+	var place := UI.label("Médine · an 1 de l'Hégire · Selim, environ 22 ans", 24, Game.INK)
 	place.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	UI.dock_top(place, 32, 44)
 	place.offset_right = -130
@@ -83,7 +83,7 @@ func _ready() -> void:
 	sub_panel.add_child(_sub)
 	sub_panel.modulate.a = 0.0
 	_sub_panel = sub_panel
-	_sub.add_child(UI.label("L'adhan, tel que Bilal l'a appelé pour la première fois", 28, Game.INK, Game.font_title))
+	_sub.add_child(UI.label("L'adhan · paroles transmises par ʿAbdallâh ibn Zayd", 28, Game.INK, Game.font_title))
 	_sub_ar = UI.label("", 58, Color("8a5a12"), Game.font_arabic)
 	_sub.add_child(_sub_ar)
 	_sub_lat = UI.label("", 36, Game.INK, Game.font_title)
@@ -124,17 +124,17 @@ func _ready() -> void:
 	UI.dock_bottom(_box, 28, 40)
 	_box.visible = false
 	root.add_child(_box)
-	_pause = PauseMenu.attach(self, 622, "Médine · an 1 de l'Hégire (622) · Selim a 22 ans")
+	_pause = PauseMenu.attach(self, 622, "Médine · an 1 de l'Hégire (622) · Selim a environ 22 ans")
 	_story(root)
 
 
 func _story(root: Control) -> void:
-	await UI.place_banner(root, "Médine", "an 1 de l'Hégire (622) · Selim a 22 ans", false)
-	await _box.say("Le conteur", "Nous étions arrivés à Médine depuis quelques mois. J'avais vingt-deux ans.")
-	await _box.say("Le conteur", "Avec ses compagnons, le Prophète ﷺ avait bâti la mosquée : des murs de briques de terre, des troncs de palmiers pour piliers, et des palmes pour toit.")
-	await _box.say("Le conteur", "Mais comment appeler les gens à la prière ? Certains proposaient une cloche, d'autres une corne…")
+	await UI.place_banner(root, "Médine", "an 1 de l'Hégire (622) · Selim a environ 22 ans", false)
+	await _box.say("Le conteur", "Nous étions arrivés à Médine depuis quelques mois. J'avais environ vingt-deux ans.")
+	await _box.say_ref("Le conteur", "Avec ses compagnons, le Prophète ﷺ avait bâti la mosquée : des murs de briques de terre, des troncs de palmiers pour piliers, et des palmes pour toit.", "bukhari:446")
+	await _box.say_ref("Le conteur", "Mais comment appeler les gens à la prière ? Certains proposaient une cloche, d'autres une corne…", "bukhari:604")
 	await _box.say("Le conteur", "Une nuit, un compagnon, ʿAbdallâh ibn Zayd, vit en rêve un homme qui lui apprit les paroles de l'appel.")
-	await _box.say("Le conteur", "Au matin, il les raconta au Prophète ﷺ. Celui-ci dit que c'était un rêve vrai, et qu'il fallait les apprendre à Bilal, dont la voix portait plus loin.")
+	await _box.say_ref("Le conteur", "Au matin, il les raconta au Prophète ﷺ. Celui-ci dit que c'était un rêve vrai, et qu'il fallait les apprendre à Bilal, dont la voix portait plus loin.", "abudawud:499")
 	_box.show_text("", "[i]Ce jour-là, Selim se trouve sur le toit de sa maison, tout près de la mosquée.[/i]")
 	await _box.ask(["Regarder vers la mosquée"])
 	_box.visible = false
@@ -142,13 +142,14 @@ func _story(root: Control) -> void:
 	var tw := create_tween()
 	tw.tween_property(self, "selim_y", vs.y * 0.775, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tw.finished
-	await _box.say("Le conteur", "Et soudain, une voix s'éleva au-dessus de la ville, depuis un toit près de la mosquée.")
+	await _box.say_ref("Le conteur", "Et soudain, une voix s'éleva au-dessus de la ville, depuis un toit près de la mosquée.", "reconstitution")
 	_box.visible = false
 	await _remind_sound()
 	await _adhan()
 	await _box.say("Le conteur", "C'était Bilal, radiyAllâhu ʿanhu. Cette voix… je l'entends encore.", ["adhan"])
-	await _box.say("Le conteur", "Il n'y avait pas encore de minaret. Bilal avait l'habitude d'appeler depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banû an-Najjâr.")
-	await _box.say("Le conteur", "Ce jour-là, toute Médine est venue prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.")
+	await _box.say_ref("Le conteur", "Il n'y avait pas encore de minaret. Bilal montait souvent appeler à l'aube depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banû an-Najjâr.", "abudawud:519")
+	await _box.say_ref("Le conteur", "On raconte aussi qu'en entendant l'appel, ʿUmar sortit de chez lui : il avait vu la même chose en rêve.", "abudawud:499")
+	await _box.say("Le conteur", "Ce jour-là, beaucoup sont venus prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.")
 	_box.show_text("", "[b]Fin de la démo[/b]\nUne lanterne s'est allumée sur ton chemin.")
 	await _box.ask(["Retour au menu"])
 	Transition.go("res://scenes/menu.tscn", Game.NIGHT_DEEP)

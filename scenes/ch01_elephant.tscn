@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/scenes/ch01_elephant.gd" id="1"]
+
+[node name="ch01_elephant" type="Node2D"]
+script = ExtResource("1")

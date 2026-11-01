@@ -14,6 +14,8 @@ var _chips: HFlowContainer
 var _trad: Label
 var _choices: VBoxContainer
 var _hint: Label
+var _ref_btn: Button
+var _next_ref := ""
 var _typing: Tween
 var _waiting := false
 var _has_choices := false
@@ -54,6 +56,16 @@ func _init() -> void:
 	_body.add_theme_color_override("default_color", Game.SAND)
 	v.add_child(_body)
 
+	# Repère de source : discret, sous la réplique ; un toucher ouvre la fiche.
+	_ref_btn = Button.new()
+	_ref_btn.flat = true
+	_ref_btn.focus_mode = Control.FOCUS_NONE
+	_ref_btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	_ref_btn.add_theme_font_size_override("font_size", 21)
+	_ref_btn.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	_ref_btn.visible = false
+	v.add_child(_ref_btn)
+
 	_chips = HFlowContainer.new()
 	_chips.add_theme_constant_override("h_separation", 12)
 	_chips.add_theme_constant_override("v_separation", 12)
@@ -76,10 +88,21 @@ func _init() -> void:
 ## Affiche une réplique et attend que le joueur touche l'écran.
 ## `words` : clés du lexique à proposer sous la réplique.
 func say(who: String, text: String, words: Array = [], wait := true) -> void:
+	_show_and_wait(who, text, words, wait)
+	if wait:
+		await advanced
+
+
+## Réplique accompagnée d'un repère de source (clé de data/references.json).
+func say_ref(who: String, text: String, ref: String, words: Array = []) -> void:
+	_next_ref = ref
+	await say(who, text, words)
+
+
+func _show_and_wait(who: String, text: String, words: Array, wait: bool) -> void:
 	show_text(who, text, words)
 	if wait:
 		_waiting = true
-		await advanced
 
 
 func show_text(who: String, text: String, words: Array = []) -> void:
@@ -94,6 +117,8 @@ func show_text(who: String, text: String, words: Array = []) -> void:
 	_has_choices = false
 	for key in words:
 		_add_chip(str(key))
+	_set_ref(_next_ref)
+	_next_ref = ""
 	_chips.visible = words.size() > 0
 	_hint.modulate.a = 0.0
 	if _typing:
@@ -137,6 +162,21 @@ func _refit() -> void:
 		return
 	await get_tree().process_frame
 	offset_top = offset_bottom
+
+
+func _set_ref(key: String) -> void:
+	for c in _ref_btn.pressed.get_connections():
+		_ref_btn.pressed.disconnect(c["callable"])
+	var r := Game.ref(key)
+	_ref_btn.visible = not r.is_empty()
+	if r.is_empty():
+		return
+	Game.note_ref(key)
+	var col := Game.ref_color(str(r.get("type", "")))
+	_ref_btn.text = "◆ " + str(r.get("court", ""))
+	for c in ["font_color", "font_hover_color", "font_pressed_color"]:
+		_ref_btn.add_theme_color_override(c, Color(col, 0.85))
+	_ref_btn.pressed.connect(func() -> void: RefCard.open(self, key))
 
 
 func _show_hint() -> void:

@@ -1,0 +1,129 @@
+{
+ "_note": "Références affichées dans le jeu. type : coran, hadith, sira, reconstitution, fiction. 'court' = texte du repère ; 'texte' = ce que dit la source (résumé ou traduction du sens) ; 'degre' = niveau de certitude dit au joueur. Chaque entrée renvoie au registre du contre-audit. À faire valider par un savant.",
+ "coran:2:127": {
+  "type": "coran",
+  "court": "Coran 2:127",
+  "titre": "Coran, sourate al-Baqara, verset 127",
+  "texte": "Le verset évoque Ibrâhîm et Ismâʿîl élevant les fondations de la Maison, en demandant à Dieu d'accepter leur œuvre.",
+  "degre": "Verset du Coran (résumé du sens)."
+ },
+ "coran:105": {
+  "type": "coran",
+  "court": "Coran 105",
+  "titre": "Coran, sourate al-Fîl (l'Éléphant)",
+  "texte": "La sourate rappelle comment Dieu a traité « les gens de l'Éléphant » : leur ruse a été rendue vaine, et des oiseaux envoyés en groupes leur ont lancé des pierres.",
+  "degre": "Verset du Coran (résumé du sens). Les noms et les détails de l'expédition viennent des récits historiques, pas de la sourate."
+ },
+ "coran:106": {
+  "type": "coran",
+  "court": "Coran 106",
+  "titre": "Coran, sourate Quraysh",
+  "texte": "La sourate évoque les voyages d'hiver et d'été de Quraysh, et les appelle à adorer le Seigneur de cette Maison.",
+  "degre": "Verset du Coran (résumé du sens). Les destinations (Yémen, Shâm) viennent des commentateurs."
+ },
+ "coran:21:25": {
+  "type": "coran",
+  "court": "Coran 21:25",
+  "titre": "Coran, sourate al-Anbiyâ', verset 25",
+  "texte": "Dieu n'a envoyé aucun messager sans lui révéler qu'il n'y a de divinité que Lui, et qu'il faut L'adorer.",
+  "degre": "Verset du Coran (résumé du sens)."
+ },
+ "bukhari:3": {
+  "type": "hadith",
+  "court": "al-Boukhârî 3",
+  "titre": "Sahîh al-Boukhârî, hadith 3 (récit de ʿÂ'icha)",
+  "texte": "Le début de la Révélation : la retraite dans la grotte de Hira, l'ange qui dit « Lis ! », le retour auprès de Khadîja qui le rassure, et la visite à Waraqa ibn Nawfal.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "bukhari:3364": {
+  "type": "hadith",
+  "court": "al-Boukhârî 3364",
+  "titre": "Sahîh al-Boukhârî, hadith 3364 (récit d'Ibn ʿAbbâs)",
+  "texte": "L'histoire de Hâjar et de son fils Ismâʿîl dans la vallée de la Mecque, de la source de Zamzam qui jaillit près d'eux, puis de la construction de la Kaaba par Ibrâhîm et Ismâʿîl.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "bukhari:2262": {
+  "type": "hadith",
+  "court": "al-Boukhârî 2262",
+  "titre": "Sahîh al-Boukhârî, hadith 2262 (récit d'Abû Hurayra)",
+  "texte": "Le Prophète ﷺ a dit que tous les prophètes avaient gardé des moutons. On lui demanda : « Et toi ? » Il répondit qu'il avait gardé ceux des gens de la Mecque, contre quelques pièces.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "bukhari:446": {
+  "type": "hadith",
+  "court": "al-Boukhârî 446",
+  "titre": "Sahîh al-Boukhârî, hadith 446 (récit d'Ibn ʿUmar)",
+  "texte": "Du vivant du Prophète ﷺ, la mosquée était bâtie en briques crues, son toit était fait de palmes et ses piliers de troncs de palmier.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "bukhari:604": {
+  "type": "hadith",
+  "court": "al-Boukhârî 604",
+  "titre": "Sahîh al-Boukhârî, hadith 604 (récit d'Ibn ʿUmar)",
+  "texte": "À Médine, on se réunissait pour la prière sans appel. Certains proposèrent une cloche, d'autres une corne. ʿUmar proposa qu'un homme appelle à la prière, et le Prophète ﷺ demanda à Bilâl de se lever et d'appeler.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "abudawud:499": {
+  "type": "hadith",
+  "court": "Abû Dâwûd 499",
+  "titre": "Sunan Abî Dâwûd, hadith 499 (récit de ʿAbdallâh ibn Zayd)",
+  "texte": "ʿAbdallâh ibn Zayd voit en rêve un homme qui lui enseigne les paroles de l'adhan. Le Prophète ﷺ lui demande de les apprendre à Bilâl, dont la voix porte plus loin. En entendant l'appel, ʿUmar dit avoir vu la même chose.",
+  "degre": "Recueil d'Abû Dâwûd ; jugé « hasan sahih » (auteur du jugement à préciser)."
+ },
+ "abudawud:519": {
+  "type": "hadith",
+  "court": "Abû Dâwûd 519",
+  "titre": "Sunan Abî Dâwûd, hadith 519 (récit d'une femme des Banû an-Najjâr)",
+  "texte": "Sa maison était la plus haute autour de la mosquée, et Bilâl y faisait l'appel de l'aube.",
+  "degre": "Recueil d'Abû Dâwûd ; jugé hasan par al-Albânî."
+ },
+ "sira:abraha": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Les biographes nomment le chef de l'expédition : Abraha, qui gouvernait le Yémen, et disent qu'il voulait détruire la Kaaba. Ils racontent aussi qu'arrivé près de la Mecque, l'éléphant refusa d'avancer.",
+  "degre": "Récit des biographes, sans hadith vérifié à ce stade."
+ },
+ "sira:naissance": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Les biographes placent sa naissance à la Mecque, l'Année de l'Éléphant, dans le clan des Banû Hâchim ; son père ʿAbdallâh était mort avant sa naissance.",
+  "degre": "Récit des biographes ; la date de 570 suit la chronologie traditionnelle."
+ },
+ "sira:halima": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Selon une coutume des familles de la Mecque, les nourrissons étaient confiés à des nourrices du désert. Il fut confié à Halîma, des Banû Saʿd.",
+  "degre": "Récit des biographes, sans hadith vérifié à ce stade."
+ },
+ "sira:famille": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Sa mère Âmina mourut quand il était encore petit. Son grand-père ʿAbd al-Muttalib le prit avec lui, puis, à la mort de celui-ci, son oncle Abû Tâlib.",
+  "degre": "Récit des biographes, sans hadith vérifié à ce stade."
+ },
+ "sira:sham": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Encore jeune, il accompagna son oncle Abû Tâlib dans une caravane vers le Shâm.",
+  "degre": "Récit des biographes ; les détails du voyage sont discutés."
+ },
+ "reconstitution": {
+  "type": "reconstitution",
+  "court": "Reconstitution",
+  "titre": "Reconstitution",
+  "texte": "Cette scène imagine un moment plausible que les sources ne décrivent pas en détail.",
+  "degre": "Mise en scène, pas un fait rapporté."
+ },
+ "fiction": {
+  "type": "fiction",
+  "court": "Fiction",
+  "titre": "Personnage inventé",
+  "texte": "Selim, sa famille et Oumm Nour sont des personnages inventés pour accompagner le récit. Ils ne sont pas des témoins de l'époque.",
+  "degre": "Fiction."
+ }
+}

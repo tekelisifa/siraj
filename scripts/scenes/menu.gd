@@ -23,7 +23,7 @@ func _ready() -> void:
 	title.add_child(UI.label("سِرَاج", 72, Game.GOLD_LIGHT, Game.font_arabic))
 	title.add_child(UI.label("Sirâj", 96, Game.SAND, Game.font_title))
 	title.add_child(UI.label("Le voyage de Selim", 42, Game.GOLD_LIGHT, Game.font_title))
-	var sub := UI.label("La vie du Prophète Muhammad ﷺ, racontée par un témoin", 24, Game.MUTED)
+	var sub := UI.label("La vie du Prophète Muhammad ﷺ, racontée par un témoin imaginaire", 24, Game.MUTED)
 	title.add_child(sub)
 	UI.fade_in(title, 1.0)
 
@@ -81,7 +81,7 @@ func _ready() -> void:
 			b.pressed.connect(_show_toast.bind("Bientôt disponible"))
 		langs.add_child(b)
 
-	buttons.add_child(UI.label("Sources authentiques · relu par [NOM DU RELECTEUR]", 20, Color("a79c86")))
+	buttons.add_child(UI.label("Sources indiquées dans le jeu · relecture par un savant en cours", 20, Color("a79c86")))
 	UI.fade_in(buttons, 1.0, 0.4)
 
 	_toast = UI.label("", 26, Game.NIGHT)
@@ -140,6 +140,7 @@ func _toggle_carnet() -> void:
 		item.add_child(UI.label(str(e["lat"]), 30, Game.SAND, Game.font_title))
 		item.add_child(UI.label(str(e["fr"]), 24, Game.MUTED))
 		_carnet_list.add_child(item)
+	_carnet_list.add_child(UI.label(Game.FICTION_NOTE, 22, Game.MUTED))
 	UI.fade_in(_carnet, 0.3)
 
 

@@ -56,6 +56,7 @@ func go(path: String, color: Color = Game.NIGHT_DEEP, caption := "", center := V
 	tw.tween_method(_set_progress, 0.0, 1.0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tw.finished
 
+	Game.chapter_refs.clear()
 	get_tree().change_scene_to_file(path)
 
 	if caption != "":

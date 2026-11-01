@@ -3,7 +3,7 @@ extends Node2D
 ## 1. Le ciel étoilé et la lampe : « Sirâj ».
 ## 2. La frise des prophètes (paix sur eux), d'Âdam à Muhammad ﷺ : un même message transmis.
 ## 3. Zoom sur la vie de Muhammad ﷺ (570-632).
-## 4. Zoom sur le point de départ de l'histoire : « Tu es ici », la Mecque, an 610.
+## 4. Zoom sur le point de départ de l'histoire : « Tu es ici », la Mecque, vers 570.
 
 const PROPHETS := ["Âdam", "Nûh", "Ibrâhîm", "Mûsâ", "Dâwûd", "ʿÎsâ", "Muhammad ﷺ"]
 const EVENTS := [
@@ -83,13 +83,13 @@ func _play() -> void:
 	tw.tween_property(self, "title_a", 0.0, 1.2)
 
 	# 2. La chaîne des prophètes.
-	tw.tween_callback(_say.bind("Depuis Âdam, Dieu a envoyé des prophètes, paix sur eux, avec un même message : adorer Dieu, l'Unique."))
+	tw.tween_callback(_say.bind("Depuis Âdam, Dieu a envoyé des prophètes, paix sur eux, avec un même message : adorer Dieu, l'Unique. (Coran 21:25)"))
 	tw.tween_property(self, "line_a", 1.0, 1.2)
 	tw.tween_property(self, "reveal", float(PROPHETS.size()), 5.5)
 	tw.tween_interval(2.0)
 
 	# 3. Zoom sur la vie de Muhammad ﷺ.
-	tw.tween_callback(_say.bind("Le dernier d'entre eux est Muhammad ﷺ. Sa vie, sur 63 années, a changé le monde."))
+	tw.tween_callback(_say.bind("Le dernier d'entre eux est Muhammad ﷺ. Sa vie, d'environ soixante-trois ans, a changé le monde."))
 	var life_scale := (vs.x - 200.0) / ((632 - 570) * YEAR_SCALE)
 	var life_center := _wx(601)
 	tw.tween_method(_zoom.bind(view_center, life_center, view_scale, life_scale), 0.0, 1.0, 3.5)
@@ -97,8 +97,8 @@ func _play() -> void:
 	tw.tween_interval(3.0)
 
 	# 4. Zoom sur « Tu es ici ».
-	tw.tween_callback(_say.bind("Notre histoire commence ici. La Mecque, an 610. Selim a dix ans… et il va tout voir de ses propres yeux."))
-	tw.tween_method(_zoom.bind(life_center, _wx(610), life_scale, life_scale * 2.6), 0.0, 1.0, 2.8)
+	tw.tween_callback(_say.bind("Notre histoire commence ici, à la Mecque, vers 570. Selim naîtra bien plus tard : le début, ce sont ses aînés qui le lui ont raconté."))
+	tw.tween_method(_zoom.bind(life_center, _wx(574), life_scale, life_scale * 2.6), 0.0, 1.0, 2.8)
 	tw.parallel().tween_property(self, "here_a", 1.0, 1.2).set_delay(1.4)
 	tw.tween_interval(1.5)
 	tw.tween_callback(_ready_prompt)
@@ -221,16 +221,16 @@ func _draw_timeline(vs: Vector2) -> void:
 			var base := y - 190.0 if up else y + 120.0
 			var link_end := Vector2(slot_x, base + 92.0) if up else Vector2(slot_x, base - 38.0)
 			draw_line(Vector2(ex, y + (-18.0 if up else 18.0)), link_end, Art.fade(Game.GOLD, ev_label_a * 0.7), 1.5, true)
-			UI.draw_text(self, Game.font_body, slot_x, base, str(ev[0]), 28, Art.fade(Game.GOLD_LIGHT, ev_label_a))
+			UI.draw_text(self, Game.font_body, slot_x, base, ("vers %d" % int(ev[0])) if int(ev[0]) < 622 else str(ev[0]), 28, Art.fade(Game.GOLD_LIGHT, ev_label_a))
 			UI.draw_text(self, Game.font_title, slot_x, base + 40.0, str(ev[1]), 30, Art.fade(Game.SAND, ev_label_a))
 			UI.draw_text(self, Game.font_body, slot_x, base + 70.0, str(ev[2]), 19, Art.fade(Game.MUTED, ev_label_a))
 
 	# Tu es ici.
 	if here_a > 0.0:
-		var hx := _sx(_wx(610))
+		var hx := _sx(_wx(570))
 		var ring := 30.0 + 10.0 * sin(time * 3.2)
 		draw_arc(Vector2(hx, y), ring, 0.0, TAU, 48, Art.fade(Game.FLAME, here_a), 3.0, true)
 		draw_arc(Vector2(hx, y), ring + 18.0, 0.0, TAU, 48, Art.fade(Game.FLAME, here_a * 0.35), 2.0, true)
 		draw_line(Vector2(hx, y - ring - 4.0), Vector2(hx, y - 150.0), Art.fade(Game.GOLD_LIGHT, here_a), 2.0)
 		UI.draw_text(self, Game.font_title, hx, y - 168.0, "Tu es ici", 54, Art.fade(Game.FLAME, here_a))
-		UI.draw_text(self, Game.font_body, hx, y + 100.0, "La Mecque · an 610", 32, Art.fade(Game.SAND, here_a))
+		UI.draw_text(self, Game.font_body, hx, y + 100.0, "La Mecque · vers 570", 32, Art.fade(Game.SAND, here_a))

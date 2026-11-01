@@ -28,7 +28,7 @@ const LEXICON := {
 	"bismillah": {"ar": "بِسْمِ اللّٰهِ", "lat": "Bismillâh", "fr": "Au nom de Dieu"},
 	"alhamdulillah": {"ar": "الْحَمْدُ لِلّٰهِ", "lat": "Alhamdulillâh", "fr": "Louange à Dieu"},
 	"jaddi": {"ar": "جَدِّي", "lat": "Jaddî", "fr": "Mon grand-père"},
-	"iqra": {"ar": "اقْرَأْ", "lat": "Iqraʾ", "fr": "Lis !"},
+	"iqra": {"ar": "اقْرَأْ", "lat": "Iqraʾ", "fr": "Lis ! (on traduit aussi : Récite !)"},
 	"amin": {"ar": "الْأَمِين", "lat": "Al-Amîn", "fr": "Le digne de confiance"},
 	"allahu_akbar": {"ar": "اللّٰهُ أَكْبَرُ", "lat": "Allâhu akbar", "fr": "Dieu est le plus grand"},
 	"adhan": {"ar": "الْأَذَان", "lat": "Al-adhân", "fr": "L'appel à la prière"},
@@ -37,7 +37,19 @@ const LEXICON := {
 	"tamr": {"ar": "تَمْر", "lat": "Tamr", "fr": "Des dattes"},
 	"zamzam": {"ar": "زَمْزَم", "lat": "Zamzam", "fr": "La source de Zamzam"},
 	"jamal": {"ar": "جَمَل", "lat": "Jamal", "fr": "Le chameau"},
+	"fil": {"ar": "الْفِيل", "lat": "Al-Fîl", "fr": "L'éléphant (nom d'une sourate du Coran)"},
+	"ghanam": {"ar": "غَنَم", "lat": "Ghanam", "fr": "Les moutons"},
+	"badiya": {"ar": "الْبَادِيَة", "lat": "Al-Bâdiya", "fr": "Le désert, la vie des nomades"},
+	"umm": {"ar": "أُمّ", "lat": "Umm", "fr": "La mère"},
 }
+
+## Phrase permanente du carnet : les personnages inventés.
+const FICTION_NOTE := "Selim, sa famille et Oumm Nour sont des personnages inventés pour accompagner le récit. Ils ne sont pas des témoins de l'époque."
+
+## Références (Coran, hadiths, Sîra) affichées discrètement pendant le jeu : data/references.json.
+var references := {}
+## Références rencontrées dans la scène en cours (page « Sources » du menu de pause).
+var chapter_refs: Array[String] = []
 
 var font_body: FontFile
 var font_title: FontFile
@@ -66,7 +78,37 @@ func _ready() -> void:
 	ThemeDB.fallback_font = font_body
 	ThemeDB.fallback_font_size = 30
 	get_tree().root.theme = theme
+	_load_references()
 	load_game()
+
+
+func _load_references() -> void:
+	var f := FileAccess.open("res://data/references.json", FileAccess.READ)
+	if f:
+		var d: Variant = JSON.parse_string(f.get_as_text())
+		if d is Dictionary:
+			references = d
+
+
+func ref(key: String) -> Dictionary:
+	return references.get(key, {})
+
+
+func note_ref(key: String) -> void:
+	if key != "" and references.has(key) and not key in chapter_refs:
+		chapter_refs.append(key)
+
+
+## Couleur du repère selon le type de source.
+static func ref_color(kind: String) -> Color:
+	match kind:
+		"coran":
+			return GOLD_LIGHT
+		"hadith":
+			return TEAL_LIGHT
+		"sira":
+			return SAND_WARM
+	return MUTED
 
 
 func _load_fonts() -> void:

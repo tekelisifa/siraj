@@ -20,9 +20,11 @@ Ces règles sont la base du projet. Toute contribution doit les respecter.
 
 | Écran | Ce qui s'y passe |
 |---|---|
-| Ouverture | Ciel étoilé et lampe, puis la frise des prophètes d'Âdam à Muhammad ﷺ, zoom sur sa vie (570-632), puis zoom sur « Tu es ici » : la Mecque, an 610 |
+| Ouverture | Ciel étoilé et lampe, puis la frise des prophètes d'Âdam à Muhammad ﷺ, zoom sur sa vie (vers 570-632), puis zoom sur « Tu es ici » : la Mecque, vers 570 |
 | Son | Au premier lancement, invitation à mettre le casque (ou à garder les sous-titres) |
 | Menu | Lampe, titre, carnet de mots arabes, réglage de la voix (conteur IA, voix du téléphone, coupée), choix de la langue (français pour l'instant) |
+| Chapitre 1 · L'Année de l'Éléphant | Récit enluminé (Selim n'est pas né). Carte de l'Arabie : route du Yémen vers la Mecque à suivre du doigt. Un éléphant lointain qui s'arrête. La sourate al-Fîl en traduction du sens, sur un paysage seul. La naissance, une lanterne à allumer au-dessus de la Mecque |
+| Chapitre 2 · L'enfance | Le désert des Banû Saʿd (zone approximative sur la carte), un troupeau à mener au puits, une lanterne qui s'éteint sur une route (Âmina), l'arbre des liens (noms seulement), la caravane vers le Shâm |
 | La veillée | Un vieil homme raconte à un enfant, près du feu (fumée, étincelles, étoiles filantes). Au dernier épisode, on découvrira que c'est Selim |
 | La Mecque, an 610 | Une ruelle à explorer, plus large que l'écran. Passants qui saluent, marchand, chat, chameau, linge au vent, poussière dorée. Petites lumières à toucher : Jabal an-Nour, la Kaaba, le marché, le puits, le chameau. La colombe guide Selim (10 ans) jusqu'à la voisine, Oumm Nour, qui lui parle de la grotte de Hira |
 | Médine, an 1 de l'Hégire | Le conteur raconte la mosquée, la question de l'appel à la prière et le rêve de ʿAbdallâh ibn Zayd. En journée (les sources ne précisent pas l'heure du premier appel), Selim (22 ans) regarde la mosquée d'origine (briques de terre, troncs de palmiers, toit de palmes). L'adhan s'élève du toit de la maison la plus haute (pas encore de minaret) ; les habitants convergent vers la mosquée et y entrent. Les contrôles se figent, les sous-titres suivent la voix du muezzin |
@@ -30,6 +32,7 @@ Ces règles sont la base du projet. Toute contribution doit les respecter.
 Transitions : la lumière se referme en étoile à 8 branches, avec des intertitres (« Douze ans plus tard… »).
 
 Dans chaque scène :
+- **des repères de sources** discrets sous certaines phrases (« ◆ Coran 105 », « ◆ al-Boukhârî 2262 », « ◆ Selon la Sîra ») ; un toucher ouvre la fiche, et le menu de pause liste toutes les sources du passage (`data/references.json`) ;
 - **un bandeau d'arrivée** indique le lieu, l'année et l'âge de Selim, puis un rappel reste en haut de l'écran ;
 - **un menu de pause** (bouton en haut à droite) : reprendre, recommencer la scène, revenir au menu, voix, et la frise de la vie du Prophète ﷺ avec « Tu es ici ». Il est masqué pendant l'adhan.
 

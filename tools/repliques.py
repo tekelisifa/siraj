@@ -13,10 +13,12 @@ ROOT = Path(__file__).resolve().parent.parent
 SCENES = [
     ("menu", "Menu"),
     ("veillee", "Épisode 1 · La veillée"),
+    ("ch01_elephant", "Chapitre 1 · L'Année de l'Éléphant"),
+    ("ch02_enfance", "Chapitre 2 · L'enfance"),
     ("mecque", "Épisode 1 · La Mecque, an 610"),
     ("medine", "Épisode 1 · Médine, le premier adhan"),
 ]
-CALL = re.compile(r'(?:say|show_text|speak)\(\s*"([^"]*)"\s*,\s*"([^"]*)"')
+CALL = re.compile(r'(?:say_ref|say|show_text|speak)\(\s*"([^"]*)"\s*,\s*"([^"]*)"')
 CONST = re.compile(r'const\s+(\w+)\s*:?=\s*"([^"]*)"')
 CALL_CONST = re.compile(r'(?:say|show_text|speak)\(\s*"([^"]*)"\s*,\s*([A-Z_]+)\s*\)')
 TAGS = re.compile(r"\[[^\]]*\]")

@@ -59,7 +59,7 @@ func _ready() -> void:
 		_birds.append(Vector3(randf() * vs.x, vs.y * randf_range(0.05, 0.16), randf_range(60.0, 110.0)))
 
 	var root := UI.layer(self)
-	var place := UI.label("La Mecque · an 610 · Selim, 10 ans", 24, Game.INK)
+	var place := UI.label("La Mecque · vers 610 · Selim, environ 10 ans", 24, Game.INK)
 	place.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	UI.dock_top(place, 32, 44)
 	place.offset_right = -130
@@ -80,14 +80,14 @@ func _ready() -> void:
 	UI.dock_bottom(_box, 28, 40)
 	_box.visible = false
 	root.add_child(_box)
-	PauseMenu.attach(self, 610, "La Mecque · an 610 · Selim a 10 ans")
+	PauseMenu.attach(self, 610, "La Mecque · vers 610 · Selim a environ 10 ans")
 	_intro(root)
 
 
 func _intro(root: Control) -> void:
 	_busy = true
 	_hint.modulate.a = 0.0
-	await UI.place_banner(root, "La Mecque", "an 610 · Selim a 10 ans", false)
+	await UI.place_banner(root, "La Mecque", "vers 610 · Selim a environ 10 ans", false)
 	_busy = false
 	UI.fade_in(_hint, 0.8)
 
@@ -164,11 +164,11 @@ func _explain(key: String) -> void:
 		"jabal":
 			await _box.say("Jabal an-Nour", "Au loin, la montagne de la Lumière : Jabal an-Nour. Tout en haut se cache une petite grotte, la grotte de Hira.", ["nour"])
 		"kaaba":
-			await _box.say("La Kaaba", "La Kaaba : la maison bâtie par Ibrâhîm et son fils Ismâʿîl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles.", ["kaaba"])
+			await _box.say_ref("La Kaaba", "La Kaaba : la maison bâtie par Ibrâhîm et son fils Ismâʿîl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles.", "coran:2:127", ["kaaba"])
 		"marche":
-			await _box.say("Le marché", "Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes partent vers le Yémen en hiver, et vers le Shâm en été.", ["tamr"])
+			await _box.say_ref("Le marché", "Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes voyagent l'hiver et l'été, vers le Yémen et vers le Shâm.", "coran:106", ["tamr"])
 		"puits":
-			await _box.say("Le puits", "Ici, aucune rivière : l'eau est précieuse. Près de la Kaaba coule la source de Zamzam, jaillie autrefois pour Hâjar et son fils Ismâʿîl.", ["zamzam"])
+			await _box.say_ref("Le puits", "Ici, aucune rivière : l'eau est précieuse. Près de la Kaaba coule la source de Zamzam, jaillie autrefois pour Hâjar et son fils Ismâʿîl.", "bukhari:3364", ["zamzam"])
 		"chameau":
 			await _box.say("Le chameau", "Le chameau, compagnon des caravanes. Il peut marcher des jours dans le désert sans boire.", ["jamal"])
 	_box.visible = false
@@ -195,7 +195,7 @@ func _conversation() -> void:
 	await _box.say("Oumm Nour, la voisine", "Tiens, prends ces dattes. Et n'oublie pas de dire Bismillâh avant de manger.", ["bismillah"])
 	await _box.say("Selim", "Bismillâh… Mmm ! Alhamdulillâh !", ["bismillah", "alhamdulillah"])
 	await _box.say("Oumm Nour, la voisine", "[i](Elle baisse la voix.)[/i] As-tu entendu ce que l'on raconte ? Muhammad, fils de ʿAbdallâh ﷺ, celui que toute la Mecque appelle Al-Amîn…", ["amin"])
-	await _box.say("Oumm Nour, la voisine", "Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Jibrîl lui est apparu, et lui a dit : « Iqraʾ ! »", ["iqra"])
+	await _box.say_ref("Oumm Nour, la voisine", "Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Jibrîl lui est apparu, et lui a dit : « Iqraʾ ! »", "bukhari:3", ["iqra"])
 	await _box.say("Selim", "Iqraʾ… « Lis ! »  Al-Amîn, l'homme le plus honnête de la Mecque… Je veux comprendre ce qui se passe.")
 	await _box.say("Le conteur", "[i]Ce jour-là, mon petit, je ne savais pas encore que toute ma vie allait suivre ce murmure.[/i]")
 	_dove_leaves()
