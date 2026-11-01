@@ -46,7 +46,12 @@ var theme: Theme
 
 var sound_ack := false
 var subtitles := true
-var voice_on := true
+## Voix : "ia" (voix générées, sinon voix du téléphone), "telephone" (toujours la voix
+## du téléphone) ou "off".
+var voice_mode := "ia"
+var voice_on: bool:
+	get:
+		return voice_mode != "off"
 var storyteller_voices: Array[String] = []
 var storyteller_choice := 2
 var words: Array[String] = []
@@ -130,6 +135,27 @@ func _build_theme() -> void:
 	theme.set_stylebox("fill", "ProgressBar", _box(GOLD_LIGHT, Color.TRANSPARENT, 6))
 
 
+# --- Voix ---
+
+const VOICE_MODES := ["ia", "telephone", "off"]
+
+
+func cycle_voice_mode() -> void:
+	var i := VOICE_MODES.find(voice_mode)
+	voice_mode = VOICE_MODES[(i + 1) % VOICE_MODES.size()]
+	save_game()
+	Audio.stop_speech()
+
+
+func voice_mode_label() -> String:
+	match voice_mode:
+		"ia":
+			return "Voix : conteur IA"
+		"telephone":
+			return "Voix : téléphone"
+	return "Voix : coupée"
+
+
 # --- Carnet de mots ---
 
 func add_word(key: String) -> bool:
@@ -148,7 +174,7 @@ func save_game() -> void:
 	var cfg := ConfigFile.new()
 	cfg.set_value("options", "sound_ack", sound_ack)
 	cfg.set_value("options", "subtitles", subtitles)
-	cfg.set_value("options", "voice_on", voice_on)
+	cfg.set_value("options", "voice_mode", voice_mode)
 	cfg.set_value("options", "storyteller_voices", storyteller_voices)
 	cfg.set_value("options", "storyteller_choice", storyteller_choice)
 	cfg.set_value("progress", "words", words)
@@ -161,7 +187,7 @@ func load_game() -> void:
 		return
 	sound_ack = cfg.get_value("options", "sound_ack", false)
 	subtitles = cfg.get_value("options", "subtitles", true)
-	voice_on = cfg.get_value("options", "voice_on", true)
+	voice_mode = str(cfg.get_value("options", "voice_mode", "ia"))
 	storyteller_choice = cfg.get_value("options", "storyteller_choice", 2)
 	var sv: Array = cfg.get_value("options", "storyteller_voices", [])
 	storyteller_voices.clear()

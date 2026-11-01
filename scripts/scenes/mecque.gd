@@ -59,26 +59,37 @@ func _ready() -> void:
 		_birds.append(Vector3(randf() * vs.x, vs.y * randf_range(0.05, 0.16), randf_range(60.0, 110.0)))
 
 	var root := UI.layer(self)
-	_words_lbl = UI.label("", 24, Color("6e4a10"))
-	_words_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	UI.dock_top(_words_lbl, 32, 50)
-	root.add_child(_words_lbl)
-	var place := UI.label("La Mecque · an 610", 24, Game.INK)
+	var place := UI.label("La Mecque · an 610 · Selim, 10 ans", 24, Game.INK)
 	place.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
-	UI.dock_top(place, 32, 50)
+	UI.dock_top(place, 32, 44)
+	place.offset_right = -130
 	root.add_child(place)
+	_words_lbl = UI.label("", 22, Color("6e4a10"))
+	_words_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	UI.dock_top(_words_lbl, 32, 82)
+	root.add_child(_words_lbl)
 	_refresh_words()
 	Game.word_added.connect(func(_k: String) -> void: _refresh_words())
 
 	_hint = UI.label("Touche le sol pour faire marcher Selim.\nTouche les petites lumières pour découvrir la ville.", 28, Game.INK, Game.font_title)
 	UI.dock_bottom(_hint, 40, 110)
 	root.add_child(_hint)
-	UI.fade_in(_hint, 0.8, 1.0)
+	_hint.modulate.a = 0.0
 
 	_box = DialogueBox.new()
 	UI.dock_bottom(_box, 28, 40)
 	_box.visible = false
 	root.add_child(_box)
+	PauseMenu.attach(self, 610, "La Mecque · an 610 · Selim a 10 ans")
+	_intro(root)
+
+
+func _intro(root: Control) -> void:
+	_busy = true
+	_hint.modulate.a = 0.0
+	await UI.place_banner(root, "La Mecque", "an 610 · Selim a 10 ans", false)
+	_busy = false
+	UI.fade_in(_hint, 0.8)
 
 
 func _refresh_words() -> void:
@@ -190,7 +201,7 @@ func _conversation() -> void:
 	_dove_leaves()
 	_box.show_text("", "[i]La colombe s'envole au-dessus des toits.[/i]")
 	await _box.ask(["Suivre la colombe"])
-	Transition.go("res://scenes/aube.tscn", Game.NIGHT_DEEP, "Douze ans plus tard…\nMédine, an 1 de l'Hégire")
+	Transition.go("res://scenes/medine.tscn", Game.SAND_WARM, "Douze ans plus tard…")
 
 
 # --- La colombe guide Selim ---
@@ -311,8 +322,8 @@ func _draw() -> void:
 	prng.seed = 3
 	for i in 70:
 		draw_circle(Vector2(prng.randf() * WORLD_W, g + 16.0 + prng.randf() * (h - g)), prng.randf_range(2.0, 5.0), Color("c49a5c"))
-	Art.palm(self, Vector2(380.0, g), 230.0, Color("7d6a3e"), sin(time * 0.9))
-	Art.palm(self, Vector2(1290.0, g), 260.0, Color("7d6a3e"), sin(time * 0.8 + 1.5))
+	Art.palm(self, Vector2(380.0, g + 6.0), 300.0, sin(time * 0.9), -0.25)
+	Art.palm(self, Vector2(1290.0, g + 6.0), 330.0, sin(time * 0.8 + 1.5), 0.2)
 	_draw_stall(g)
 	_draw_well(g)
 	_draw_camel(g)
@@ -320,8 +331,8 @@ func _draw() -> void:
 	# Porte de la voisine.
 	_arch(Vector2(DOOR_X, g - 220.0), 130.0, 220.0, Color("5c3a1e"))
 	_arch(Vector2(DOOR_X, g - 206.0), 110.0, 206.0, Color("3e2612"))
-	draw_colored_polygon(Art.ellipse(Vector2(DOOR_X + 95.0, g - 8.0), 22.0, 10.0), Color("8a5a32"))
-	Art.palm(self, Vector2(DOOR_X + 95.0, g - 10.0), 60.0, Color("5f8a3a"), sin(time * 1.4))
+	draw_colored_polygon(PackedVector2Array([Vector2(DOOR_X + 75.0, g - 30.0), Vector2(DOOR_X + 115.0, g - 30.0), Vector2(DOOR_X + 108.0, g), Vector2(DOOR_X + 82.0, g)]), Color("a8643a"))
+	Art.palm(self, Vector2(DOOR_X + 95.0, g - 28.0), 70.0, sin(time * 1.4) * 0.5, 0.0)
 	if neighbor_a > 0.0:
 		Art.person(self, Vector2(DOOR_X, g - 4.0), 170.0, Art.fade(Color("6b3f4a"), neighbor_a), Color("3e2a1a"), Art.fade(Color("2b3e5c"), neighbor_a), true)
 	# Passants.

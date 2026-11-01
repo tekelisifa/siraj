@@ -37,18 +37,19 @@ func _ready() -> void:
 	UI.dock_bottom(_box, 28, 40)
 	_box.visible = false
 	root.add_child(_box)
-	_story()
+	PauseMenu.attach(self, 610, "La veillée · bien des années plus tard", "Le récit commence ici · La Mecque, an 610")
+	_story(root)
 
 
-func _story() -> void:
-	await get_tree().create_timer(1.6).timeout
+func _story(root: Control) -> void:
+	await UI.place_banner(root, "La veillée", "Une cour, un soir · bien des années plus tard")
 	await _box.say("Le conteur", "Approche, mon petit. Assieds-toi près du feu… la nuit est douce.")
 	await _box.say("Le conteur", "Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton âge.")
 	await _box.say("L'enfant", "Tu as vraiment tout vu, Jaddî ?", ["jaddi"])
 	await _box.say("Le conteur", "Pas tout. Mais beaucoup. Écoute bien… Tout commence à la Mecque, dans les ruelles de mon enfance.")
 	_box.show_text("", "[i]Le feu crépite. Les lanternes se balancent doucement.[/i]")
 	await _box.ask(["Entrer dans le souvenir"])
-	Transition.go("res://scenes/mecque.tscn", Game.SAND_WARM, "La Mecque\nan 610")
+	Transition.go("res://scenes/mecque.tscn", Game.SAND_WARM)
 
 
 func _process(delta: float) -> void:

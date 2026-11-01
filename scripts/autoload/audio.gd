@@ -158,7 +158,7 @@ func speak(who: String, text: String) -> void:
 	if not Game.voice_on:
 		return
 	var path := VOICE_DIR + line_id(who, text) + ".ogg"
-	if ResourceLoader.exists(path):
+	if Game.voice_mode == "ia" and ResourceLoader.exists(path):
 		_narration.stream = load(path)
 		_narration.play()
 		return

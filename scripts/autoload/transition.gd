@@ -7,6 +7,9 @@ var _mat: ShaderMaterial
 var _caption: Label
 var busy := false
 
+## Émis quand la scène suivante est entièrement visible.
+signal opened
+
 
 func _ready() -> void:
 	layer = 100
@@ -71,3 +74,4 @@ func go(path: String, color: Color = Game.NIGHT_DEEP, caption := "", center := V
 	await tw2.finished
 	_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	busy = false
+	opened.emit()

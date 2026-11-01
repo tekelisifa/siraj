@@ -81,3 +81,40 @@ static func fade_in(c: CanvasItem, duration := 0.6, delay := 0.0) -> void:
 ## Texte centré dessiné directement dans un _draw().
 static func draw_text(ci: CanvasItem, font: Font, center_x: float, baseline_y: float, text: String, size: int, color: Color) -> void:
 	ci.draw_string(font, Vector2(center_x - 500.0, baseline_y), text, HORIZONTAL_ALIGNMENT_CENTER, 1000.0, size, color)
+
+
+## Bandeau d'arrivée dans une scène : le lieu en grand, puis l'époque et l'âge de Selim.
+## Il apparaît au centre de l'écran, puis s'efface.
+static func place_banner(root: Control, place: String, details: String, dark := true, delay := 0.3) -> void:
+	await root.get_tree().process_frame
+	if Transition.busy:
+		await Transition.opened
+	var panel := PanelContainer.new()
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = Color(Game.NIGHT, 0.82) if dark else Color(Game.SAND, 0.9)
+	sb.border_color = Game.GOLD
+	sb.set_border_width_all(2)
+	sb.set_corner_radius_all(30)
+	sb.set_content_margin_all(28)
+	panel.add_theme_stylebox_override("panel", sb)
+	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.anchor_right = 1.0
+	panel.anchor_top = 0.3
+	panel.anchor_bottom = 0.3
+	panel.offset_left = 70
+	panel.offset_right = -70
+	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
+	root.add_child(panel)
+	var v := vbox(6)
+	v.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.add_child(v)
+	v.add_child(label(place, 58, Game.GOLD_LIGHT if dark else Game.INK, Game.font_title))
+	v.add_child(label(details, 28, Game.SAND if dark else Color("5c4a2a")))
+	panel.modulate.a = 0.0
+	var tw := panel.create_tween()
+	tw.tween_interval(delay)
+	tw.tween_property(panel, "modulate:a", 1.0, 0.7)
+	tw.tween_interval(2.4)
+	tw.tween_property(panel, "modulate:a", 0.0, 0.7)
+	tw.tween_callback(panel.queue_free)
+	await tw.finished

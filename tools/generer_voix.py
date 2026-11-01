@@ -5,8 +5,9 @@
   ou changée, réglages modifiés. Les voix inutilisées sont supprimées.
 - Les expressions arabes sont lues en mode arabe, le reste en français (data/phonetique.json).
 - Voix de référence optionnelles : audio/voix/reference/<conteur|selim|enfant|voisine|passant>.<wav|mp3|ogg>
-- Sans voix de référence, la voix par défaut de Chatterbox est transposée (plus grave
-  pour le conteur, plus aiguë pour les enfants) pour distinguer les personnages.
+- Sans voix de référence, c'est la voix par défaut de Chatterbox (sans transposition :
+  elle sonnait faux).
+- « vitesse » accélère légèrement le débit sans changer la hauteur de la voix.
 
 Usage :
   python3 tools/generer_voix.py                       # ce qui manque
@@ -30,20 +31,20 @@ from repliques import ROOT, lines, phonetics, split_languages
 VOICE_DIR = ROOT / "audio" / "voix"
 REF_DIR = VOICE_DIR / "reference"
 MANIFEST = VOICE_DIR / "manifest.json"
-VERSION = 1  # à augmenter pour tout régénérer après un changement de réglages
+VERSION = 2  # à augmenter pour tout régénérer après un changement de réglages
 
 # Réglages par personnage.
-#  ref : nom du fichier de voix de référence ; exag : intensité émotionnelle ;
-#  cfg : tenue du rythme ; demi_tons : transposition quand il n'y a pas de référence.
+#  ref : nom du fichier de voix de référence ; exag : intensité émotionnelle (0,5 = neutre) ;
+#  cfg : fidélité au rythme du texte ; vitesse : débit (1,08 = 8 % plus rapide).
 CHARACTERS = {
-    "Le conteur": {"ref": "conteur", "exag": 0.6, "cfg": 0.4, "demi_tons": -3},
-    "Selim": {"ref": "selim", "exag": 0.65, "cfg": 0.5, "demi_tons": 4},
-    "L'enfant": {"ref": "enfant", "exag": 0.6, "cfg": 0.5, "demi_tons": 5},
-    "Oumm Nour, la voisine": {"ref": "voisine", "exag": 0.55, "cfg": 0.5, "demi_tons": 2},
-    "Un passant": {"ref": "passant", "exag": 0.5, "cfg": 0.5, "demi_tons": -1},
+    "Le conteur": {"ref": "conteur", "exag": 0.5, "cfg": 0.5, "vitesse": 1.08},
+    "Selim": {"ref": "selim", "exag": 0.6, "cfg": 0.5, "vitesse": 1.0},
+    "L'enfant": {"ref": "enfant", "exag": 0.6, "cfg": 0.5, "vitesse": 1.0},
+    "Oumm Nour, la voisine": {"ref": "voisine", "exag": 0.55, "cfg": 0.5, "vitesse": 1.0},
+    "Un passant": {"ref": "passant", "exag": 0.5, "cfg": 0.5, "vitesse": 1.0},
 }
-# Narration et lieux découverts : voix du conteur, plus douce.
-NARRATOR = {"ref": "conteur", "exag": 0.45, "cfg": 0.4, "demi_tons": -3}
+# Narration et lieux découverts : voix du conteur, un peu plus douce.
+NARRATOR = {"ref": "conteur", "exag": 0.45, "cfg": 0.5, "vitesse": 1.08}
 PAUSE_S = 0.12
 
 
@@ -104,7 +105,6 @@ def load_model():
 
 def generate(model, item, default_conds):
     import torch
-    import torchaudio.functional as AF
 
     s = settings(item["who"])
     ref = reference(s["ref"])
@@ -121,13 +121,10 @@ def generate(model, item, default_conds):
         if i:
             pieces.append(silence)
         pieces.append(wav)
-    wav = torch.cat(pieces, dim=1)
-    if not ref and s["demi_tons"]:
-        wav = AF.pitch_shift(wav, model.sr, n_steps=s["demi_tons"])
-    return wav
+    return torch.cat(pieces, dim=1)
 
 
-def save_ogg(wav, sr, dest: Path):
+def save_ogg(wav, sr, dest: Path, speed: float = 1.0):
     import torchaudio
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -135,7 +132,8 @@ def save_ogg(wav, sr, dest: Path):
         torchaudio.save(str(w), wav, sr)
         subprocess.run([
             "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(w),
-            "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,loudnorm=I=-18:TP=-2",
+            "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+            f"atempo={speed:.3f},loudnorm=I=-18:TP=-2",
             "-ac", "1", "-ar", "44100", "-c:a", "libvorbis", "-q:a", "5", str(dest),
         ], check=True)
 
@@ -163,7 +161,7 @@ def main() -> int:
         for n, item in enumerate(todo, 1):
             print(f"[{n}/{len(todo)}] {item['id']} {item['who'] or 'Narration'}", flush=True)
             wav = generate(model, item, default_conds)
-            save_ogg(wav, model.sr, item["path"])
+            save_ogg(wav, model.sr, item["path"], float(settings(item["who"]).get("vitesse", 1.0)))
             manifest[item["id"]] = {"qui": item["who"], "fp": item["fp"]}
             MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")

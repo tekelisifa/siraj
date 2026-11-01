@@ -63,17 +63,20 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | `6ff92e5aeb.ogg` | Narration | La colombe s'envole au-dessus des toits. | La colombe s'envole au-dessus des toits. |
 | `bda2779244.ogg` | Un passant | As-salâmu ʿalaykum ! | [ar] السَّلَامُ عَلَيْكُمْ |
 
-## Épisode 1 · Médine, au coucher du soleil
+## Épisode 1 · Médine, le premier adhan
 
 | Fichier | Personnage | Réplique | Dit |
 |---|---|---|---|
 | `c4673e4aad.ogg` | Le conteur | Nous étions arrivés à Médine depuis quelques mois. J'avais vingt-deux ans. | Nous étions arrivés à Médine depuis quelques mois. J'avais vingt-deux ans. |
-| `d69fac45b6.ogg` | Le conteur | Les musulmans construisaient leur mosquée, et cherchaient comment s'appeler les uns les autres à la prière. | Les musulmans construisaient leur mosquée, et cherchaient comment s'appeler les uns les autres à la prière. |
-| `82d1580726.ogg` | Le conteur | Ce soir-là, le soleil descendait lentement derrière les palmiers… | Ce soir-là, le soleil descendait lentement derrière les palmiers… |
-| `1bec26bf1f.ogg` | Narration | Le ciel devient orange, puis rose, au-dessus de Médine. | Le ciel devient orange, puis rose, au-dessus de Médine. |
-| `df15f5a645.ogg` | Le conteur | Et soudain, une voix s'est élevée au-dessus de la ville. | Et soudain, une voix s'est élevée au-dessus de la ville. |
+| `9f5c3f4292.ogg` | Le conteur | Avec ses compagnons, le Prophète ﷺ avait bâti la mosquée : des murs de briques de terre, des troncs de palmiers pour piliers, et des palmes pour toit. | Avec ses compagnons, le Prophète · [ar] صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ · avait bâti la mosquée : des murs de briques de terre, des troncs de palmiers pour piliers, et des palmes pour toit. |
+| `87e8fa4989.ogg` | Le conteur | Mais comment appeler les gens à la prière ? Certains proposaient une cloche, d'autres une corne… | Mais comment appeler les gens à la prière ? Certains proposaient une cloche, d'autres une corne… |
+| `df2d793877.ogg` | Le conteur | Une nuit, un compagnon, ʿAbdallâh ibn Zayd, vit en rêve un homme qui lui apprit les paroles de l'appel. | Une nuit, un compagnon, Abdallah ibn Zeyd, vit en rêve un homme qui lui apprit les paroles de l'appel. |
+| `2d222bc7e1.ogg` | Le conteur | Au matin, il les raconta au Prophète ﷺ. Celui-ci dit que c'était un rêve vrai, et qu'il fallait les apprendre à Bilal, dont la voix portait plus loin. | Au matin, il les raconta au Prophète · [ar] صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ · . Celui-ci dit que c'était un rêve vrai, et qu'il fallait les apprendre à Bilal, dont la voix portait plus loin. |
+| `2e96c71483.ogg` | Narration | Ce jour-là, Selim se trouve sur le toit de sa maison, tout près de la mosquée. | Ce jour-là, Sélim se trouve sur le toit de sa maison, tout près de la mosquée. |
+| `ed2382bad6.ogg` | Le conteur | Et soudain, une voix s'éleva au-dessus de la ville, depuis un toit près de la mosquée. | Et soudain, une voix s'éleva au-dessus de la ville, depuis un toit près de la mosquée. |
 | `43fc5a0685.ogg` | Le conteur | C'était Bilal, radiyAllâhu ʿanhu. Cette voix… je l'entends encore. | C'était Bilal · [ar] رَضِيَ اللّٰهُ عَنْهُ · . Cette voix… je l'entends encore. |
-| `d105a31df8.ogg` | Le conteur | Ce soir-là, toute Médine s'est levée pour prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. | Ce soir-là, toute Médine s'est levée pour prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. |
+| `b7011b0261.ogg` | Le conteur | Il n'y avait pas encore de minaret. Bilal avait l'habitude d'appeler depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banû an-Najjâr. | Il n'y avait pas encore de minaret. Bilal avait l'habitude d'appeler depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banou an Nadjar. |
+| `e7807854af.ogg` | Le conteur | Ce jour-là, toute Médine est venue prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. | Ce jour-là, toute Médine est venue prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. |
 | `5ce6b76128.ogg` | Narration | Fin de la démo Une lanterne s'est allumée sur ton chemin. | Fin de la démo Une lanterne s'est allumée sur ton chemin. |
 
-Total : 32 répliques.
+Total : 35 répliques.

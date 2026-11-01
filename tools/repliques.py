@@ -14,7 +14,7 @@ SCENES = [
     ("menu", "Menu"),
     ("veillee", "Épisode 1 · La veillée"),
     ("mecque", "Épisode 1 · La Mecque, an 610"),
-    ("aube", "Épisode 1 · Médine, au coucher du soleil"),
+    ("medine", "Épisode 1 · Médine, le premier adhan"),
 ]
 CALL = re.compile(r'(?:say|show_text|speak)\(\s*"([^"]*)"\s*,\s*"([^"]*)"')
 CONST = re.compile(r'const\s+(\w+)\s*:?=\s*"([^"]*)"')

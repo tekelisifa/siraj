@@ -127,15 +127,92 @@ static func dove(ci: CanvasItem, pos: Vector2, s := 1.0, flap := 0.0, facing := 
 	]), shade)
 
 
-## Palmier stylisé, silhouette d'une seule couleur.
-static func palm(ci: CanvasItem, base: Vector2, h: float, color: Color, sway := 0.0) -> void:
-	var top := base + Vector2(sway * 6.0, -h)
-	ci.draw_line(base, top, color, h * 0.06)
-	for i in 6:
-		var ang := -PI * 0.5 + (i - 2.5) * 0.55 + sway * 0.05
-		var mid := top + Vector2(cos(ang), sin(ang)) * h * 0.25
-		var end := top + Vector2(cos(ang) * h * 0.45, sin(ang) * h * 0.32 + h * 0.16)
-		ci.draw_polyline(PackedVector2Array([top, mid, end]), color, h * 0.035, true)
+const PALM_TRUNK := Color("8a6a44")
+const PALM_LEAF := Color("4f7a3a")
+const PALM_LEAF_DARK := Color("3d6430")
+const PALM_DATES := Color("b5602a")
+
+
+## Palmier-dattier : tronc légèrement courbé et annelé, palmes arquées et retombantes
+## avec leurs folioles, grappes de dattes.
+## `lean` incline le palmier (-1 à 1), `sway` le fait onduler au vent.
+## `silhouette` : une seule couleur (contre-jour, lointain).
+static func palm(ci: CanvasItem, base: Vector2, h: float, sway := 0.0, lean := 0.0,
+		trunk: Color = PALM_TRUNK, leaf: Color = PALM_LEAF, silhouette := false) -> void:
+	var leaf_dark := leaf if silhouette else PALM_LEAF_DARK
+	var ring := trunk if silhouette else trunk.darkened(0.25)
+	# Tronc : courbe de Bézier, plus large en bas.
+	var top := base + Vector2(lean * h * 0.22 + sway * h * 0.015, -h)
+	var ctrl := base + Vector2(lean * h * 0.02, -h * 0.55)
+	var left := PackedVector2Array()
+	var right := PackedVector2Array()
+	var n := 12
+	for i in n + 1:
+		var t := float(i) / n
+		var p := _bez(base, ctrl, top, t)
+		var tan := (_bez(base, ctrl, top, minf(t + 0.02, 1.0)) - _bez(base, ctrl, top, maxf(t - 0.02, 0.0))).normalized()
+		var nrm := Vector2(-tan.y, tan.x)
+		var wdt := lerpf(h * 0.05, h * 0.032, t)
+		left.append(p + nrm * wdt)
+		right.append(p - nrm * wdt)
+	var poly := left.duplicate()
+	right.reverse()
+	poly.append_array(right)
+	ci.draw_colored_polygon(poly, trunk)
+	# Anneaux du tronc (traces des anciennes palmes).
+	if not silhouette:
+		for i in range(1, 14):
+			var t := float(i) / 14.0
+			var p := _bez(base, ctrl, top, t)
+			var wdt := lerpf(h * 0.05, h * 0.032, t)
+			ci.draw_line(p + Vector2(-wdt * 0.9, -wdt * 0.15), p + Vector2(wdt * 0.9, wdt * 0.15), ring, maxf(1.5, h * 0.006))
+	# Grappes de dattes qui pendent sous la couronne.
+	if not silhouette:
+		for k in 2:
+			var side := -1.0 if k == 0 else 1.0
+			var stalk_end := top + Vector2(side * h * 0.075, h * 0.05)
+			ci.draw_line(top + Vector2(side * h * 0.02, 0), stalk_end, Color("c9a24a"), maxf(2.0, h * 0.007))
+			var rows := [3, 4, 3, 2, 1]
+			for r in rows.size():
+				var cnt: int = rows[r]
+				for d in cnt:
+					var off := Vector2((d - (cnt - 1) * 0.5) * h * 0.019, r * h * 0.017)
+					ci.draw_circle(stalk_end + off, h * 0.0105, PALM_DATES if (d + r) % 3 != 0 else PALM_DATES.darkened(0.2))
+	# Palmes : arquées vers l'extérieur, puis retombantes, avec folioles.
+	# [angle (rad, -PI/2 = vers le haut), longueur relative, retombée]
+	var fronds := [
+		[-3.05, 0.55, 1.15], [-0.1, 0.55, 1.15],
+		[-2.7, 0.66, 0.9], [-0.45, 0.66, 0.9],
+		[-2.3, 0.7, 0.6], [-0.85, 0.7, 0.6],
+		[-1.95, 0.6, 0.3], [-1.2, 0.6, 0.3], [-1.57, 0.48, 0.12],
+	]
+	for f in fronds:
+		var ang: float = f[0] + sway * 0.06
+		var length: float = h * float(f[1])
+		var droop: float = f[2]
+		var dir := Vector2(cos(ang), sin(ang))
+		var end := top + Vector2(dir.x * length, dir.y * length * 0.55 + length * 0.55 * droop)
+		var mid := top + Vector2(dir.x * length * 0.55, dir.y * length * 0.7 - length * 0.08)
+		var col := leaf_dark if float(f[2]) >= 0.85 else leaf
+		var prev := top
+		var steps := 14
+		for i in range(1, steps + 1):
+			var t := float(i) / steps
+			var p := _bez(top, mid, end, t)
+			ci.draw_line(prev, p, col, maxf(2.0, h * 0.012 * (1.0 - t * 0.6)), true)
+			# Folioles des deux côtés, orientées vers la pointe et vers le bas.
+			if i > 1:
+				var tan := (p - prev).normalized()
+				var nrm := Vector2(-tan.y, tan.x)
+				var lf := length * 0.16 * sin(t * PI * 0.9 + 0.2)
+				for sd: float in [-1.0, 1.0]:
+					var tip: Vector2 = p + (nrm * sd * 0.75 + tan * 0.45 + Vector2(0, 0.55)).normalized() * lf
+					ci.draw_line(p, tip, col, maxf(1.5, h * 0.008), true)
+			prev = p
+
+
+static func _bez(a: Vector2, b: Vector2, c: Vector2, t: float) -> Vector2:
+	return a.lerp(b, t).lerp(b.lerp(c, t), t)
 
 
 ## Motif géométrique (étoiles à 8 branches) sur une zone.

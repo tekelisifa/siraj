@@ -22,12 +22,16 @@ Ces règles sont la base du projet. Toute contribution doit les respecter.
 |---|---|
 | Ouverture | Ciel étoilé et lampe, puis la frise des prophètes d'Âdam à Muhammad ﷺ, zoom sur sa vie (570-632), puis zoom sur « Tu es ici » : la Mecque, an 610 |
 | Son | Au premier lancement, invitation à mettre le casque (ou à garder les sous-titres) |
-| Menu | Lampe, titre, carnet de mots arabes, réglage de la voix du conteur, choix de la langue (français pour l'instant) |
+| Menu | Lampe, titre, carnet de mots arabes, réglage de la voix (conteur IA, voix du téléphone, coupée), choix de la langue (français pour l'instant) |
 | La veillée | Un vieil homme raconte à un enfant, près du feu (fumée, étincelles, étoiles filantes). Au dernier épisode, on découvrira que c'est Selim |
 | La Mecque, an 610 | Une ruelle à explorer, plus large que l'écran. Passants qui saluent, marchand, chat, chameau, linge au vent, poussière dorée. Petites lumières à toucher : Jabal an-Nour, la Kaaba, le marché, le puits, le chameau. La colombe guide Selim (10 ans) jusqu'à la voisine, Oumm Nour, qui lui parle de la grotte de Hira |
-| Médine, an 1 de l'Hégire | Selim (22 ans) monte sur le toit au coucher du soleil. Le premier adhan s'élève au loin : la nuit tombe, les lampes s'allument dans les maisons, les habitants sortent vers la mosquée. Les contrôles se figent, les sous-titres suivent la voix du muezzin |
+| Médine, an 1 de l'Hégire | Le conteur raconte la mosquée, la question de l'appel à la prière et le rêve de ʿAbdallâh ibn Zayd. En journée (les sources ne précisent pas l'heure du premier appel), Selim (22 ans) regarde la mosquée d'origine (briques de terre, troncs de palmiers, toit de palmes). L'adhan s'élève du toit de la maison la plus haute (pas encore de minaret) ; les habitants convergent vers la mosquée et y entrent. Les contrôles se figent, les sous-titres suivent la voix du muezzin |
 
 Transitions : la lumière se referme en étoile à 8 branches, avec des intertitres (« Douze ans plus tard… »).
+
+Dans chaque scène :
+- **un bandeau d'arrivée** indique le lieu, l'année et l'âge de Selim, puis un rappel reste en haut de l'écran ;
+- **un menu de pause** (bouton en haut à droite) : reprendre, recommencer la scène, revenir au menu, voix, et la frise de la vie du Prophète ﷺ avec « Tu es ici ». Il est masqué pendant l'adhan.
 
 ## Installer sur ton téléphone
 
@@ -82,6 +86,8 @@ Chaque réplique est lue à voix haute, dans cet ordre de priorité :
 1. **Un fichier de voix** existe pour la réplique (`audio/voix/<identifiant>.ogg`) : le jeu le joue.
 2. **Sinon**, la voix de synthèse du téléphone la lit. Le conteur utilise l'une des 3 voix retenues (la 3ᵉ par défaut), avec une hauteur et un rythme propres à chaque personnage.
 
+Le réglage « Voix » (menu ou pause) passe de *conteur IA* (fichiers de voix) à *téléphone* (toujours la synthèse du téléphone) puis *coupée*.
+
 Les mots arabes sont réécrits « à la française » pour être bien prononcés (`data/phonetique.json`). Les indications de jeu entre parenthèses ne sont pas lues.
 
 ### Génération automatique des voix (Chatterbox)
@@ -92,7 +98,8 @@ GitHub génère tout seul les fichiers de voix avec [Chatterbox](https://github.
 - **Lecture franco-arabe** : les expressions arabes (*As-salâmu ʿalaykum*, *Bismillâh*, la formule ﷺ…) sont lues en mode arabe, à partir du vrai texte arabe.
 - **Régénérer une voix** depuis le téléphone : onglet *Actions* › *Voix (Chatterbox)* › *Run workflow*, puis indiquer `tout`, un personnage (`Le conteur`), ou des identifiants de [`audio/voix/SCRIPT.md`](audio/voix/SCRIPT.md).
 - **Voix de référence** : déposer un extrait de 10 à 20 secondes (une personne qui lit un texte, avec son accord) dans `audio/voix/reference/`, nommé `conteur`, `selim`, `enfant`, `voisine` ou `passant` (`.wav`, `.mp3` ou `.ogg`). Toutes les répliques du personnage sont régénérées avec ce timbre.
-- Sans voix de référence, la voix par défaut de Chatterbox est transposée pour distinguer les personnages (plus grave pour le conteur, plus aiguë pour les enfants).
+- **Le conteur** a une voix de référence : `audio/voix/reference/conteur.wav` (voix de vieil homme, posée). Ses répliques et la narration sont accélérées de 8 % (`vitesse` dans `tools/generer_voix.py`), sans changer la hauteur.
+- Sans voix de référence (Selim, l'enfant, la voisine, les passants pour l'instant), c'est la voix par défaut de Chatterbox, sans transposition.
 - **Un vrai enregistrement** déposé à la main sous le nom d'une réplique n'est jamais écrasé.
 
 La première génération prend du temps (les serveurs gratuits de GitHub n'ont pas de carte graphique). Les suivantes ne concernent que les changements.
@@ -103,10 +110,10 @@ Chaque fichier généré par Chatterbox contient un filigrane audio inaudible (R
 
 ### L'adhan
 
-`audio/adhan.ogg` : adhan complet (3 min 36), en **Ogg Vorbis**. Godot ne lit pas l'Ogg Opus, même si l'extension est la même : convertir avec
-`ffmpeg -i entree.ogg -ac 1 -ar 44100 -c:a libvorbis -q:a 5 audio/adhan.ogg`.
+`audio/adhan.ogg` : adhan complet (1 min 37), en **Ogg Vorbis**. Godot ne lit pas l'Ogg Opus, même si l'extension est la même : convertir avec
+`ffmpeg -i entree.ogg -af highpass=f=70 -ac 1 -ar 44100 -c:a libvorbis -q:a 5 audio/adhan.ogg`.
 
-Les sous-titres suivent la position réelle de la lecture. Les débuts des 12 phrases ont été mesurés sur les respirations du muezzin (`PHRASE_TIMES` dans `scripts/scenes/aube.gd`) : à mettre à jour si l'enregistrement change.
+Les sous-titres suivent la position réelle de la lecture. Les débuts des 12 phrases ont été mesurés sur les respirations du muezzin (`PHRASE_TIMES` dans `scripts/scenes/medine.gd`) : à mettre à jour si l'enregistrement change.
 
 L'adhan n'est jamais lu par une voix de synthèse ni généré par une IA.
 
@@ -117,7 +124,9 @@ Les ambiances (vent, feu, rumeur de la ville) et les bruitages (pas dans le sabl
 ## Points à faire valider par le relecteur
 
 - [ ] Faire entendre l'adhan dans la scène de Bilal (radiyAllâhu ʿanhu) : certains savants sont réservés sur l'imitation de la voix d'un Compagnon. Ici, l'adhan est présenté comme « tel que Bilal l'a appelé », pas comme sa voix.
-- [ ] La scène du premier adhan se passe au coucher du soleil (Maghrib), car l'enregistrement est un adhan sans la formule de l'aube.
+- [ ] Le premier adhan est placé en journée, sans heure précise : le hadith de ʿAbdallâh ibn Zayd (Abu Dawud, Ahmad, ad-Dârimî) dit seulement qu'il raconta son rêve au matin.
+- [ ] Le récit du conteur : la mosquée (briques de terre, troncs de palmiers, palmes), la cloche et la corne proposées, le rêve, et la réponse du Prophète ﷺ rapportée au style indirect.
+- [ ] Bilal sur le toit de la maison d'une femme des Banû an-Najjâr (Abu Dawud 519, hasan selon al-Albânî ; le hadith parle de son habitude, pas spécifiquement du premier appel) ; pas de minaret à l'époque.
 - [ ] Les textes des lieux à découvrir à la Mecque (Jabal an-Nour, la Kaaba, le marché, Zamzam, le chameau).
 - [ ] Les paroles de la voisine (fictive, Oumm Nour) sur la grotte de Hira et le mot *Iqraʾ*.
 - [ ] Les dates de la frise (570, 610, 622, 632) et l'ordre des prophètes présentés.
