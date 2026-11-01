@@ -39,10 +39,6 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Son grand-père, Abd al-Muttalib, le prit avec lui. Puis, à la mort de son grand-père, ce fut son oncle, Abou Talib.\"]]",
   "qui": "Le conteur"
  },
- "43fc5a0685": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"C'était Bilal\"], [\"ar\", \"رَضِيَ اللّٰهُ عَنْهُ\"], [\"fr\", \". Cette voix… je l'entends encore.\"]]",
-  "qui": "Le conteur"
- },
  "4658c49107": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ici, aucune rivière : l'eau est précieuse. Près de la Kaaba coule la source de Zamzam, jaillie autrefois pour Hajar et son fils Ismaïl.\"]]",
   "qui": "Le puits"
@@ -58,10 +54,6 @@
  "4a2e4bd91f": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Il n'y avait pas encore de minaret. Bilal montait souvent appeler à l'aube depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banou an Nadjar.\"]]",
   "qui": "Le conteur"
- },
- "4da441db7c": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"… Mmm !\"], [\"ar\", \"الْحَمْدُ لِلّٰهِ\"]]",
-  "qui": "Selim"
  },
  "4f9afd9923": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Nous étions arrivés à Médine depuis quelques mois. J'avais environ vingt-deux ans.\"]]",
@@ -95,10 +87,6 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Au désert, on apprenait tôt à garder les bêtes et à les mener à l'eau.\"]]",
   "qui": "Le conteur"
  },
- "68c8b46624": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"], [\"fr\", \"Oum Nour !\"]]",
-  "qui": "Selim"
- },
  "69746867e0": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Selon les récits, son chef s'appelait Abraha. Il voulait détruire la Kaaba.\"]]",
   "qui": "Le conteur"
@@ -110,6 +98,10 @@
  "6ff92e5aeb": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"La colombe s'envole au-dessus des toits.\"]]",
   "qui": ""
+ },
+ "70657c96df": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"C'était la voix de Bilal\"], [\"ar\", \"رَضِيَ اللّٰهُ عَنْهُ\"], [\"fr\", \". Cette voix… je l'entends encore.\"]]",
+  "qui": "Le conteur"
  },
  "8312c74bcd": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Le chameau, compagnon des caravanes. Il peut marcher des jours dans le désert sans boire.\"]]",
@@ -158,6 +150,10 @@
  "adc082ed3f": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce que je vais te raconter, mon petit, je ne l'ai pas vu. Mes aînés me l'ont raconté, et le Coran en parle.\"]]",
   "qui": "Le conteur"
+ },
+ "b3b0e428c9": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"… Mmm, elles sont délicieuses !\"], [\"ar\", \"الْحَمْدُ لِلّٰهِ\"]]",
+  "qui": "Selim"
  },
  "b52904c9bd": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Bien plus tard, il dira que tous les prophètes avaient gardé des moutons, et que lui aussi avait gardé ceux des gens de la Mecque.\"]]",
@@ -214,6 +210,10 @@
  "f473a7a69e": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce matin-là, j'avais l'impression de voir ma ville pour la première fois.\"]]",
   "qui": "Le conteur"
+ },
+ "fc32fbc0d7": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"], [\"fr\", \"Oum Nour ! Oui, je me suis levé tôt ce matin.\"]]",
+  "qui": "Selim"
  },
  "fe62c74f8d": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Approche, mon petit. Assieds-toi près du feu… la nuit est douce.\"]]",
