@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Essai : prononciation arabe des prénoms et des formules.
 
-Pour quelques répliques, produit deux versions à comparer :
-- « avant » : la voix actuelle du jeu (audio/voix/<id>.ogg) ;
-- « apres » : les passages arabes (prénoms, formules) sont lus par une voix arabe native
+Pour quelques répliques, produit trois versions à comparer :
+- « 1_avant » : la voix actuelle du jeu (audio/voix/<id>.ogg) ;
+- « 2_phonetique » : tout en mode français, les mots arabes écrits phonétiquement ;
+- « 3_voix_arabe » : les passages arabes (prénoms, formules) sont lus par une voix arabe native
   (Microsoft Edge, ar-SA), puis convertis au timbre du personnage avec la conversion de voix
   de Chatterbox ; le français reste généré comme aujourd'hui.
 
@@ -33,6 +34,31 @@ EXTRA_ARABIC = [
     ["Al-Amîn", "الْأَمِين"],
     ["Bilal", "بِلَال"],
 ]
+# Option phonétique : orthographe pensée pour une prononciation proche de l'arabe.
+PHONETIC = [
+    ["As-salâmu ʿalaykum", "Assalâmou ʿaleykoum"],
+    ["Wa ʿalaykumu s-salâm", "Wa ʿaleykoumou ssalâm"],
+    ["Alhamdulillâh", "Al-hamdou lillâh"],
+    ["Bismillâh", "Bismillâh"],
+    ["ʿAbdallâh", "ʿAbdoullâh"],
+    ["Muhammad", "Mou-hammad"],
+    ["Al-Amîn", "Al-Amîne"],
+    ["yâ Selîm", "yâ Salîm"],
+    ["Bilal", "Bilâl"],
+    [" ﷺ", ", sallallâhou ʿaleyhi wa sallam"],
+]
+PHONETIC_LETTERS = [["â", "â"], ["î", "i"], ["û", "ou"], ["ʿ", ""], ["ʾ", ""], ["«", ""], ["»", ""]]
+
+
+def phonetic(text):
+    t = clean(text)
+    for a, b in sorted(PHONETIC, key=lambda p: -len(p[0])):
+        t = t.replace(a, b)
+    for a, b in PHONETIC_LETTERS:
+        t = t.replace(a, b)
+    return " ".join(t.split())
+
+
 EDGE_VOICE = {
     "Le conteur": ("ar-SA-HamedNeural", "-8%", "-6Hz"),
     "Selim": ("ar-SA-HamedNeural", "+0%", "+40Hz"),
@@ -104,9 +130,20 @@ def main():
         lid = line_id(who, text)
         cur = ROOT / "audio" / "voix" / f"{lid}.ogg"
         if cur.exists():
-            to_mp3(cur, OUT / f"{n}_{slug}_avant.mp3")
+            to_mp3(cur, OUT / f"{n}_{slug}_1_avant.mp3")
         s = gv.settings(who)
         ref = gv.reference(s["ref"])
+        # Option 1 : phonétique, tout en français.
+        tts.conds = gv.copy.deepcopy(default_conds)
+        ptxt = phonetic(text)
+        args = {"text": ptxt, "language_id": "fr", "exaggeration": s["exag"], "cfg_weight": s["cfg"]}
+        if ref:
+            args["audio_prompt_path"] = str(ref)
+        with tempfile.TemporaryDirectory() as tmp:
+            w = Path(tmp) / "ph.wav"
+            torchaudio.save(str(w), tts.generate(**args), sr)
+            to_mp3(w, OUT / f"{n}_{slug}_2_phonetique.mp3", float(s.get("vitesse", 1.0)))
+        notes.append(f"{n}. {who} — phonétique : {ptxt}")
         segs = split(text, ph)
         pieces = []
         silence = torch.zeros(1, int(sr * 0.12))
@@ -134,8 +171,8 @@ def main():
             full = torch.cat(pieces, dim=1)
             w = Path(tmp) / "full.wav"
             torchaudio.save(str(w), full, sr)
-            to_mp3(w, OUT / f"{n}_{slug}_apres.mp3", float(s.get("vitesse", 1.0)))
-        notes.append(f"{n}. {who} : " + " + ".join(f"[{l}] {x}" for l, x in segs))
+            to_mp3(w, OUT / f"{n}_{slug}_3_voix_arabe.mp3", float(s.get("vitesse", 1.0)))
+        notes.append(f"{n}. {who} — voix arabe : " + " + ".join(f"[{l}] {x}" for l, x in segs))
         print(notes[-1], flush=True)
     (OUT / "LISEZMOI.txt").write_text("\n".join(notes) + "\n", encoding="utf-8")
 
