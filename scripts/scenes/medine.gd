@@ -63,7 +63,7 @@ func _ready() -> void:
 		motes.append(Vector3(rng.randf() * vs.x, rng.randf() * vs.y * 0.75, rng.randf() * TAU))
 
 	var root := UI.layer(self)
-	var place := UI.label("Médine · an 1 de l'Hégire · Selim, environ 22 ans", 24, Game.INK)
+	var place := UI.label("Chapitre 13 · L'appel (aperçu)\nMédine · an 1 de l'Hégire · Selim, environ 22 ans", 24, Game.INK)
 	place.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	UI.dock_top(place, 32, 44)
 	place.offset_right = -130
@@ -152,6 +152,7 @@ func _story(root: Control) -> void:
 	await _box.say("Le conteur", "Ce jour-là, beaucoup sont venus prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.")
 	_box.show_text("", "[b]Fin de la démo[/b]\nUne lanterne s'est allumée sur ton chemin.")
 	await _box.ask(["Retour au menu"])
+	Game.mark_done(13)
 	Transition.go("res://scenes/menu.tscn", Game.NIGHT_DEEP)
 
 

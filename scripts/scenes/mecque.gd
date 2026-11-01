@@ -36,6 +36,7 @@ var _walk_tw: Tween
 var _step_t := 0.0
 var _visited := {}
 var _npcs: Array[Dictionary] = []
+var _last_greet := -99.0
 var _motes: Array[Vector3] = []
 var _birds: Array[Vector3] = []
 
@@ -59,14 +60,14 @@ func _ready() -> void:
 		_birds.append(Vector3(randf() * vs.x, vs.y * randf_range(0.05, 0.16), randf_range(60.0, 110.0)))
 
 	var root := UI.layer(self)
-	var place := UI.label("La Mecque · vers 610 · Selim, environ 10 ans", 24, Game.INK)
+	var place := UI.label("Chapitre 4 · La lumière de Hira\nLa Mecque · vers 610 · Selim, environ 10 ans", 24, Game.INK)
 	place.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	UI.dock_top(place, 32, 44)
 	place.offset_right = -130
 	root.add_child(place)
 	_words_lbl = UI.label("", 22, Color("6e4a10"))
 	_words_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
-	UI.dock_top(_words_lbl, 32, 82)
+	UI.dock_top(_words_lbl, 32, 112)
 	root.add_child(_words_lbl)
 	_refresh_words()
 	Game.word_added.connect(func(_k: String) -> void: _refresh_words())
@@ -201,7 +202,8 @@ func _conversation() -> void:
 	_dove_leaves()
 	_box.show_text("", "[i]La colombe s'envole au-dessus des toits.[/i]")
 	await _box.ask(["Suivre la colombe"])
-	Transition.go("res://scenes/a_suivre.tscn", Game.NIGHT_DEEP)
+	Game.mark_done(4)
+	Game.go_chapter(5, Color("efe2c4"))
 
 
 # --- La colombe guide Selim ---
@@ -250,10 +252,12 @@ func _process(delta: float) -> void:
 	for n in _npcs:
 		n["x"] = fmod(float(n["x"]) + float(n["v"]) * delta + WORLD_W + 400.0, WORLD_W + 400.0)
 		var x: float = float(n["x"]) - 200.0
-		if not _talked and not _busy and absf(x - selim_x) < 110.0 and time - float(n["said"]) > 25.0:
+		# Un seul passant salue à la fois, avec un vrai silence entre deux saluts.
+		if not _talked and not _busy and not _box.visible and absf(x - selim_x) < 110.0 \
+				and time - float(n["said"]) > 25.0 and time - _last_greet > 7.0 and not Audio.is_speaking():
 			n["said"] = time
-			if not _box.visible:
-				Audio.speak("Un passant", "As-salâmu ʿalaykum !")
+			_last_greet = time
+			Audio.speak("Un passant", "As-salâmu ʿalaykum !")
 	for i in _motes.size():
 		var m := _motes[i]
 		m.x = fmod(m.x + delta * 8.0 + vs.x, vs.x)

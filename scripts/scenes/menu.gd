@@ -31,9 +31,24 @@ func _ready() -> void:
 	UI.dock_bottom(buttons, 48, 56)
 	root.add_child(buttons)
 
-	var start := UI.button("Commencer le voyage")
-	start.pressed.connect(func() -> void: Transition.go("res://scenes/veillee.tscn", Game.NIGHT_DEEP, "Épisode 1\nLe murmure"))
+	# Reprendre là où le joueur s'est arrêté, ou commencer par la veillée.
+	var next := 0
+	for c in Game.CHAPTERS:
+		if str(c[3]) != "" and int(c[0]) != 13 and not int(c[0]) in Game.done_chapters:
+			next = int(c[0])
+			break
+	var start := UI.button("Commencer le voyage" if Game.done_chapters.is_empty() else ("Continuer · chapitre %d" % next if next > 0 else "Revivre le voyage"))
+	start.pressed.connect(func() -> void:
+		if Game.done_chapters.is_empty() or next == 0:
+			Transition.go("res://scenes/veillee.tscn", Game.NIGHT_DEEP, "La veillée")
+		else:
+			Game.go_chapter(next, Color("efe2c4")))
 	buttons.add_child(start)
+
+	var voyage := UI.button("Ton voyage · %d / 21 chapitres" % Game.done_chapters.size(), false)
+	voyage.custom_minimum_size = Vector2(0, 84)
+	voyage.pressed.connect(func() -> void: Transition.go("res://scenes/voyage.tscn", Game.NIGHT_DEEP))
+	buttons.add_child(voyage)
 
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 16)

@@ -5,9 +5,10 @@ extends Node2D
 const CHAPITRES := [
 	["1", "L'Année de l'Éléphant", true],
 	["2", "L'enfance", true],
-	["3", "Al-Amîn", false],
+	["3", "Al-Amîn", true],
 	["4", "La lumière de Hira", true],
-	["5 à 12", "De l'appel sur as-Safâ à l'arrivée à Médine", false],
+	["5", "L'appel sur as-Safâ", true],
+	["6 à 12", "Des épreuves de la Mecque à l'arrivée à Médine", false],
 	["13", "L'appel (aperçu disponible)", true],
 	["14 à 21", "Médine, jusqu'au pèlerinage d'adieu", false],
 ]
@@ -47,6 +48,9 @@ func _ready() -> void:
 	preview.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	preview.pressed.connect(func() -> void: Transition.go("res://scenes/medine.tscn", Game.SAND_WARM, "Aperçu · chapitre 13\nMédine, an 1 de l'Hégire"))
 	v.add_child(preview)
+	var voy := UI.button("Ton voyage", false)
+	voy.pressed.connect(func() -> void: Transition.go("res://scenes/voyage.tscn", Game.NIGHT_DEEP))
+	v.add_child(voy)
 	var menu := UI.button("Revenir au menu")
 	menu.pressed.connect(func() -> void: Transition.go("res://scenes/menu.tscn", Game.NIGHT_DEEP))
 	v.add_child(menu)

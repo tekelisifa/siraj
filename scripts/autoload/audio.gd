@@ -169,6 +169,10 @@ func speak(who: String, text: String) -> void:
 	DisplayServer.tts_speak(for_tts(text), voice, 90, float(p["pitch"]), float(p["rate"]))
 
 
+func is_speaking() -> bool:
+	return _narration.playing or DisplayServer.tts_is_speaking()
+
+
 func stop_speech() -> void:
 	if _narration:
 		_narration.stop()

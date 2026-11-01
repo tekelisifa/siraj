@@ -19,7 +19,7 @@ signal herd_done
 
 
 func chapter_info() -> Dictionary:
-	return {"year": 575, "where": "Le désert, puis la Mecque · vers 570-583 · avant la naissance de Selim", "here": "Tu es ici · l'enfance du Prophète ﷺ · vers 570-583"}
+	return {"num": 2, "year": 575, "where": "Le désert, puis la Mecque · vers 570-583 · avant la naissance de Selim", "here": "Tu es ici · l'enfance du Prophète ﷺ · vers 570-583"}
 
 
 func _ready() -> void:
@@ -79,7 +79,7 @@ func _story() -> void:
 		"Il a gardé les moutons des gens de la Mecque, comme les prophètes avant lui (al-Boukhârî 2262).",
 		"Le désert, les caravanes, la patience du berger.",
 	], ["badiya", "ghanam", "umm"])
-	Transition.go("res://scenes/mecque.tscn", Game.SAND_WARM, "Bien des années plus tard…\nla Mecque, vers 610")
+	finish()
 
 
 # --- Troupeau ---

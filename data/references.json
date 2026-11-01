@@ -125,5 +125,68 @@
   "titre": "Personnage inventé",
   "texte": "Selim, sa famille et Oumm Nour sont des personnages inventés pour accompagner le récit. Ils ne sont pas des témoins de l'époque.",
   "degre": "Fiction."
+ },
+ "sira:amin": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Avant même la Révélation, les gens de la Mecque l'appelaient al-Amîn, « le digne de confiance ».",
+  "degre": "Récit des biographes, sans hadith vérifié à ce stade."
+ },
+ "sira:khadija": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Khadîja, commerçante de la Mecque, lui confia ses marchandises pour une caravane. Appréciant son honnêteté, elle l'épousa.",
+  "degre": "Récit des biographes ; l'âge au mariage (environ 25 ans) suit la tradition."
+ },
+ "bukhari:1582": {
+  "type": "hadith",
+  "court": "al-Boukhârî 1582",
+  "titre": "Sahîh al-Boukhârî, hadith 1582 (récit de Jâbir ibn ʿAbdallâh)",
+  "texte": "Quand la Kaaba fut reconstruite, le Prophète ﷺ portait lui-même des pierres, avec son oncle al-ʿAbbâs.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "sira:pierre": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Lors de la reconstruction de la Kaaba, les clans se disputèrent l'honneur de remettre la Pierre noire. Il proposa de la poser sur un manteau que les chefs soulevèrent ensemble, puis il la remit lui-même à sa place.",
+  "degre": "Récit des biographes ; le nombre de clans n'est pas fixé ici."
+ },
+ "sira:discret": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Pendant environ trois ans, le message fut transmis discrètement, de personne à personne, avant l'appel public.",
+  "degre": "Récit des biographes ; la durée est traditionnelle."
+ },
+ "sira:arqam": {
+  "type": "sira",
+  "court": "Selon la Sîra",
+  "titre": "Les biographies du Prophète ﷺ (Sîra)",
+  "texte": "Les premiers croyants se retrouvaient notamment dans la maison d'al-Arqam, près d'as-Safâ.",
+  "degre": "Récit des biographes, sans hadith vérifié à ce stade."
+ },
+ "coran:26:214": {
+  "type": "coran",
+  "court": "Coran 26:214",
+  "titre": "Coran, sourate ash-Shuʿarâ', verset 214",
+  "texte": "Dieu demande au Prophète ﷺ d'avertir ses proches parents.",
+  "degre": "Verset du Coran (résumé du sens)."
+ },
+ "bukhari:4770": {
+  "type": "hadith",
+  "court": "al-Boukhârî 4770",
+  "titre": "Sahîh al-Boukhârî, hadith 4770 (récit d'Ibn ʿAbbâs)",
+  "texte": "Après la révélation du verset 26:214, il monta sur as-Safâ et appela les clans de Quraysh. Il leur demanda s'ils le croiraient s'il annonçait des cavaliers derrière la vallée ; ils répondirent qu'ils ne l'avaient jamais entendu mentir. Il les avertit alors. Abû Lahab le rejeta, et la sourate al-Masad fut révélée.",
+  "degre": "Recueil d'al-Boukhârî."
+ },
+ "coran:111": {
+  "type": "coran",
+  "court": "Coran 111",
+  "titre": "Coran, sourate al-Masad",
+  "texte": "La sourate annonce la perte d'Abû Lahab, qui avait rejeté le message, et dit que ses biens ne lui serviront à rien.",
+  "degre": "Verset du Coran (résumé du sens)."
  }
 }

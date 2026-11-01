@@ -32,9 +32,13 @@ signal drag_done
 signal target_tapped
 
 
-## À redéfinir : année (pour la frise), lieu et texte du menu de pause.
+## À redéfinir : numéro du chapitre, année (pour la frise), lieu et texte du menu de pause.
 func chapter_info() -> Dictionary:
-	return {"year": 570, "where": "", "here": ""}
+	return {"num": 0, "year": 570, "where": "", "here": ""}
+
+
+func chapter_num() -> int:
+	return int(chapter_info().get("num", 0))
 
 
 func _ready() -> void:
@@ -58,6 +62,16 @@ func _ready() -> void:
 	_hint.offset_bottom = 146
 	_hint.modulate.a = 0.0
 	root.add_child(_hint)
+
+	# Numéro et titre du chapitre, toujours visibles en haut.
+	var n := chapter_num()
+	if n > 0:
+		var c := Game.chapter(n)
+		var top := UI.label("Chapitre %d · %s" % [n, c[1]], 24, Game.INK, Game.font_title)
+		top.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		UI.dock_top(top, 36, 46)
+		top.offset_right = -130
+		root.add_child(top)
 
 	box = DialogueBox.new()
 	UI.dock_bottom(box, 28, 40)
@@ -150,7 +164,21 @@ func stars(r: Rect2, n: int, a := 1.0) -> void:
 # --- Interface du récit ---
 
 func banner(place: String, details: String) -> void:
+	var n := chapter_num()
+	if n > 0:
+		details = "Chapitre %d · %s\n%s" % [n, Game.chapter(n)[1], details]
 	await UI.place_banner(root, place, details, false)
+
+
+## Fin du chapitre : progression enregistrée, puis chapitre suivant (ou « À suivre »).
+func finish() -> void:
+	var n := chapter_num()
+	Game.mark_done(n)
+	var nxt := Game.next_playable(n)
+	if nxt > 0:
+		Game.go_chapter(nxt, PARCHMENT)
+	else:
+		Transition.go("res://scenes/a_suivre.tscn", Game.NIGHT_DEEP)
 
 
 func hint(text: String) -> void:

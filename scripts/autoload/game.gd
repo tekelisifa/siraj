@@ -41,7 +41,37 @@ const LEXICON := {
 	"ghanam": {"ar": "غَنَم", "lat": "Ghanam", "fr": "Les moutons"},
 	"badiya": {"ar": "الْبَادِيَة", "lat": "Al-Bâdiya", "fr": "Le désert, la vie des nomades"},
 	"umm": {"ar": "أُمّ", "lat": "Umm", "fr": "La mère"},
+	"hajar_aswad": {"ar": "الْحَجَرُ الْأَسْوَد", "lat": "Al-Hajar al-Aswad", "fr": "La Pierre noire, à l'angle de la Kaaba"},
+	"tijara": {"ar": "تِجَارَة", "lat": "Tijâra", "fr": "Le commerce"},
+	"nadhir": {"ar": "نَذِير", "lat": "Nadhîr", "fr": "Celui qui avertit"},
+	"safa": {"ar": "الصَّفَا", "lat": "As-Safâ", "fr": "Une petite colline près de la Kaaba"},
 }
+
+## Les 21 chapitres : numéro, titre, période, scène (vide = pas encore disponible).
+## Le chapitre 13 est jouable en aperçu.
+const CHAPTERS := [
+	[1, "L'Année de l'Éléphant", "vers 570", "res://scenes/ch01_elephant.tscn"],
+	[2, "L'enfance", "vers 570-583", "res://scenes/ch02_enfance.tscn"],
+	[3, "Al-Amîn", "vers 595-605", "res://scenes/ch03_amin.tscn"],
+	[4, "La lumière de Hira", "vers 610", "res://scenes/mecque.tscn"],
+	[5, "L'appel sur as-Safâ", "vers 610-613", "res://scenes/ch05_safa.tscn"],
+	[6, "Ahad, Ahad", "vers 613-615", ""],
+	[7, "Les migrations en Abyssinie", "vers 615-616", ""],
+	[8, "Les années difficiles", "vers 616-619", ""],
+	[9, "Le voyage nocturne", "avant la Hijra", ""],
+	[10, "Les serments d'al-ʿAqaba", "vers 621-622", ""],
+	[11, "La Hijra", "an 1 (622)", ""],
+	[12, "La mosquée et les frères", "an 1 (622)", ""],
+	[13, "L'appel", "an 1 (622)", "res://scenes/medine.tscn"],
+	[14, "La qibla et Badr", "an 2 (624)", ""],
+	[15, "Ouhoud", "an 3 (625)", ""],
+	[16, "La tranchée", "an 5 (627)", ""],
+	[17, "Al-Houdaybiya", "an 6 (628)", ""],
+	[18, "Les lettres aux souverains", "vers l'an 6-7", ""],
+	[19, "Le retour à la Mecque", "an 8 (630)", ""],
+	[20, "Le pèlerinage d'adieu", "an 10 (632)", ""],
+	[21, "La lampe ne s'éteint pas", "an 11 (632)", ""],
+]
 
 ## Phrase permanente du carnet : les personnages inventés.
 const FICTION_NOTE := "Selim, sa famille et Oumm Nour sont des personnages inventés pour accompagner le récit. Ils ne sont pas des témoins de l'époque."
@@ -67,6 +97,8 @@ var voice_on: bool:
 var storyteller_voices: Array[String] = []
 var storyteller_choice := 2
 var words: Array[String] = []
+## Chapitres terminés (numéros).
+var done_chapters: Array[int] = []
 
 
 func _ready() -> void:
@@ -210,6 +242,42 @@ func add_word(key: String) -> bool:
 	return true
 
 
+# --- Chapitres ---
+
+static func chapter(n: int) -> Array:
+	for c in CHAPTERS:
+		if int(c[0]) == n:
+			return c
+	return []
+
+
+## Légende de transition : « Chapitre 3 » puis le titre.
+static func chapter_caption(n: int) -> String:
+	var c := chapter(n)
+	return "Chapitre %d\n%s" % [n, c[1]] if not c.is_empty() else ""
+
+
+func go_chapter(n: int, color: Color = SAND_WARM) -> void:
+	var c := chapter(n)
+	if c.is_empty() or str(c[3]) == "":
+		return
+	Transition.go(str(c[3]), color, chapter_caption(n))
+
+
+func mark_done(n: int) -> void:
+	if not n in done_chapters:
+		done_chapters.append(n)
+		save_game()
+
+
+## Chapitre suivant jouable (après n), ou 0.
+static func next_playable(n: int) -> int:
+	for c in CHAPTERS:
+		if int(c[0]) > n and str(c[3]) != "" and int(c[0]) != 13:
+			return int(c[0])
+	return 0
+
+
 # --- Sauvegarde ---
 
 func save_game() -> void:
@@ -220,6 +288,7 @@ func save_game() -> void:
 	cfg.set_value("options", "storyteller_voices", storyteller_voices)
 	cfg.set_value("options", "storyteller_choice", storyteller_choice)
 	cfg.set_value("progress", "words", words)
+	cfg.set_value("progress", "chapters", done_chapters)
 	cfg.save(SAVE_PATH)
 
 
@@ -235,6 +304,10 @@ func load_game() -> void:
 	storyteller_voices.clear()
 	for v in sv:
 		storyteller_voices.append(str(v))
+	var ch: Array = cfg.get_value("progress", "chapters", [])
+	done_chapters.clear()
+	for c in ch:
+		done_chapters.append(int(c))
 	var saved: Array = cfg.get_value("progress", "words", [])
 	words.clear()
 	for w in saved:

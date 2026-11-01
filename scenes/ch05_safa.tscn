@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/scenes/ch05_safa.gd" id="1"]
+
+[node name="ch05_safa" type="Node2D"]
+script = ExtResource("1")

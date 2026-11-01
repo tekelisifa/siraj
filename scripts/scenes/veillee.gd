@@ -49,7 +49,7 @@ func _story(root: Control) -> void:
 	await _box.say("Le conteur", "Pas tout. Mais beaucoup. Et ce que je n'ai pas vu, mes aînés me l'ont raconté. L'histoire commence avant ma naissance, à la Mecque…")
 	_box.show_text("", "[i]Le feu crépite. Les lanternes se balancent doucement.[/i]")
 	await _box.ask(["Entrer dans le souvenir"])
-	Transition.go("res://scenes/ch01_elephant.tscn", Color("efe2c4"), "Bien avant la naissance de Selim…")
+	Game.go_chapter(1, Color("efe2c4"))
 
 
 func _process(delta: float) -> void:

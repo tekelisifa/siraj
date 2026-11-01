@@ -12,7 +12,7 @@ var lantern_on := 0.0
 
 
 func chapter_info() -> Dictionary:
-	return {"year": 570, "where": "La Mecque · vers 570 · avant la naissance de Selim", "here": "Tu es ici · vers 570 · l'Année de l'Éléphant"}
+	return {"num": 1, "year": 570, "where": "La Mecque · vers 570 · avant la naissance de Selim", "here": "Tu es ici · vers 570 · l'Année de l'Éléphant"}
 
 
 func _ready() -> void:
@@ -71,7 +71,7 @@ func _story() -> void:
 		"Le Prophète ﷺ naquit à la Mecque cette année-là, vers 570.",
 		"Son père était mort avant sa naissance.",
 	], ["fil", "kaaba"])
-	Transition.go("res://scenes/ch02_enfance.tscn", PARCHMENT, "Les premières années…")
+	finish()
 
 
 # --- Vignettes ---
