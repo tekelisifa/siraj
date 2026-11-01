@@ -5,6 +5,7 @@
   ou changée, réglages modifiés. Les voix inutilisées sont supprimées.
 - Les expressions arabes sont lues en mode arabe, le reste en français (data/phonetique.json).
 - Voix de référence optionnelles : audio/voix/reference/<conteur|selim|enfant|voisine|passant>.<wav|mp3|ogg>
+  et, pour les passages en arabe, la même voix enregistrée en arabe : <nom>_ar.<wav|mp3|ogg>
 - Sans voix de référence, c'est la voix par défaut de Chatterbox (sans transposition :
   elle sonnait faux).
 - « vitesse » accélère légèrement le débit sans changer la hauteur de la voix.
@@ -67,7 +68,11 @@ def file_hash(p) -> str:
 def fingerprint(who: str) -> str:
     s = settings(who)
     ref = reference(s["ref"])
-    return f"v{VERSION}|{json.dumps(s, sort_keys=True)}|{file_hash(ref)}"
+    fp = f"v{VERSION}|{json.dumps(s, sort_keys=True)}|{file_hash(ref)}"
+    ref_ar = reference(s["ref"] + "_ar")
+    if ref_ar:
+        fp += f"|ar:{file_hash(ref_ar)}"
+    return fp
 
 
 def plan(force: str):
@@ -113,7 +118,11 @@ def generate(model, item, default_conds):
     silence = torch.zeros(1, int(model.sr * PAUSE_S))
     for i, (lang, seg) in enumerate(item["segs"]):
         args = {"text": seg, "language_id": lang, "exaggeration": s["exag"], "cfg_weight": s["cfg"]}
-        if ref:
+        ref_ar = reference(s["ref"] + "_ar") if lang == "ar" else None
+        if ref_ar:
+            # Même personnage, enregistré en arabe : prononciation arabe naturelle.
+            args["audio_prompt_path"] = str(ref_ar)
+        elif ref:
             args["audio_prompt_path"] = str(ref)
             if lang != "fr":
                 args["cfg_weight"] = 0.0  # limite l'accent de la référence sur l'arabe

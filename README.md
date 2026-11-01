@@ -100,6 +100,7 @@ GitHub génère tout seul les fichiers de voix avec [Chatterbox](https://github.
 - **Voix de référence** : déposer un extrait de 10 à 20 secondes (une personne qui lit un texte, avec son accord) dans `audio/voix/reference/`, nommé `conteur`, `selim`, `enfant`, `voisine` ou `passant` (`.wav`, `.mp3` ou `.ogg`). Toutes les répliques du personnage sont régénérées avec ce timbre.
 - **Le conteur** a une voix de référence : `audio/voix/reference/conteur.wav` (voix de vieil homme, posée). Ses répliques et la narration sont accélérées de 8 % (`vitesse` dans `tools/generer_voix.py`), sans changer la hauteur.
 - Sans voix de référence (Selim, l'enfant, la voisine, les passants pour l'instant), c'est la voix par défaut de Chatterbox, sans transposition.
+- **Accent arabe** : Chatterbox copie l'accent de la voix de référence. Pour que les prénoms et les formules (ﷺ, *As-salâmu ʿalaykum*…) sonnent juste, la référence doit parler français avec un léger accent arabe. On peut aussi ajouter la même voix enregistrée **en arabe** (`conteur_ar.wav`, `voisine_ar.wav`…) : elle sert alors pour tous les passages en arabe.
 - **Un vrai enregistrement** déposé à la main sous le nom d'une réplique n'est jamais écrasé.
 
 La première génération prend du temps (les serveurs gratuits de GitHub n'ont pas de carte graphique). Les suivantes ne concernent que les changements.

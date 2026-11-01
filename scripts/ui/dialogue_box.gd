@@ -103,6 +103,7 @@ func show_text(who: String, text: String, words: Array = []) -> void:
 	_typing.tween_property(_body, "visible_ratio", 1.0, dur)
 	_typing.tween_callback(_show_hint)
 	Audio.speak(who, text)
+	_refit()
 
 
 ## Propose des choix et renvoie l'indice choisi.
@@ -112,14 +113,30 @@ func ask(options: Array) -> int:
 	_hint.modulate.a = 0.0
 	for i in options.size():
 		var b := UI.button(str(options[i]), i == 0)
+		# Pas de retour à la ligne automatique : sinon Godot mesure le bouton avant de
+		# connaître sa largeur (un mot par ligne) et le croit immense.
+		b.autowrap_mode = TextServer.AUTOWRAP_OFF
+		b.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		b.custom_minimum_size = Vector2(0, 96)
 		b.pressed.connect(func() -> void: choice_made.emit(i))
 		_choices.add_child(b)
 		UI.fade_in(b, 0.4, 0.15 * i)
+	_refit()
 	var idx: int = await choice_made
 	Audio.stop_speech()
 	_has_choices = false
 	_clear(_choices)
+	_refit()
 	return idx
+
+
+## Ramène la boîte à sa taille utile. Un contrôle ancré grandit tout seul quand son
+## contenu grandit, mais ne rétrécit jamais : on le force après chaque changement.
+func _refit() -> void:
+	if not is_inside_tree():
+		return
+	await get_tree().process_frame
+	offset_top = offset_bottom
 
 
 func _show_hint() -> void:
