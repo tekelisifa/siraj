@@ -1,6 +1,6 @@
 {
  "0dda05bd72": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Djibril lui est apparu, et lui a dit\"], [\"ar\", \"اقْرَأْ\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"fr\", \"Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Djibril lui est apparu, et lui a dit\"], [\"ar\", \"اقْرَأْ\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "2d222bc7e1": {
@@ -16,7 +16,7 @@
   "qui": ""
  },
  "310d6a9259": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"], [\"ar\", \"يَا سَلِيم\"], [\"fr\", \"! Tu es bien matinal aujourd'hui.\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"], [\"ar\", \"يَا سَلِيم\"], [\"fr\", \"! Tu es bien matinal aujourd'hui.\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "43fc5a0685": {
@@ -32,7 +32,7 @@
   "qui": ""
  },
  "491b2de90d": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi\"], [\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"fr\", \"Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi\"], [\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "4da441db7c": {
@@ -80,7 +80,7 @@
   "qui": "Le conteur"
  },
  "96832c0cba": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"Tiens, prends ces dattes. Et n'oublie pas de dire\"], [\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"avant de manger.\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"fr\", \"Tiens, prends ces dattes. Et n'oublie pas de dire\"], [\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"avant de manger.\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "9f5c3f4292": {
@@ -108,7 +108,7 @@
   "qui": "Le conteur"
  },
  "df2b4c467c": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"As-tu entendu ce que l'on raconte ? Mouhammad, fils de Abdallah\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"celui que toute la Mecque appelle Al Amine…\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"fr\", \"As-tu entendu ce que l'on raconte ? Mouhammad, fils de Abdallah\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"celui que toute la Mecque appelle Al Amine…\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "df2d793877": {
