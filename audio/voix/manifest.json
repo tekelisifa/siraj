@@ -1,0 +1,130 @@
+{
+ "0dda05bd72": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 2, \"exag\": 0.55, \"ref\": \"voisine\"}||[[\"fr\", \"Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Djibril lui est apparu, et lui a dit\"], [\"ar\", \"اقْرَأْ\"]]",
+  "qui": "Oumm Nour, la voisine"
+ },
+ "1bec26bf1f": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Le ciel devient orange, puis rose, au-dessus de Médine.\"]]",
+  "qui": ""
+ },
+ "2e390c75b4": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"La Kaaba : la maison bâtie par Ibrahim et son fils Ismaïl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles.\"]]",
+  "qui": "La Kaaba"
+ },
+ "310d6a9259": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 2, \"exag\": 0.55, \"ref\": \"voisine\"}||[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"], [\"ar\", \"يَا سَلِيم\"], [\"fr\", \"! Tu es bien matinal aujourd'hui.\"]]",
+  "qui": "Oumm Nour, la voisine"
+ },
+ "43fc5a0685": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"C'était Bilal\"], [\"ar\", \"رَضِيَ اللّٰهُ عَنْهُ\"], [\"fr\", \". Cette voix… je l'entends encore.\"]]",
+  "qui": "Le conteur"
+ },
+ "4658c49107": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Ici, aucune rivière : l'eau est précieuse. Près de la Kaaba coule la source de Zamzam, jaillie autrefois pour Hajar et son fils Ismaïl.\"]]",
+  "qui": "Le puits"
+ },
+ "483b6b1c99": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Comment Sélim répond-il ?\"]]",
+  "qui": ""
+ },
+ "491b2de90d": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 2, \"exag\": 0.55, \"ref\": \"voisine\"}||[[\"fr\", \"Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi\"], [\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"]]",
+  "qui": "Oumm Nour, la voisine"
+ },
+ "4da441db7c": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 4, \"exag\": 0.65, \"ref\": \"selim\"}||[[\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"… Mmm !\"], [\"ar\", \"الْحَمْدُ لِلّٰهِ\"]]",
+  "qui": "Selim"
+ },
+ "4fe32eb00f": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Ce jour-là, mon petit, je ne savais pas encore que toute ma vie allait suivre ce murmure.\"]]",
+  "qui": "Le conteur"
+ },
+ "5c64bbdedc": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Au loin, la montagne de la Lumière\"], [\"ar\", \"جَبَلُ النُّور\"], [\"fr\", \". Tout en haut se cache une petite grotte, la grotte de Hira.\"]]",
+  "qui": "Jabal an-Nour"
+ },
+ "5cce0a8006": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Le feu crépite. Les lanternes se balancent doucement.\"]]",
+  "qui": ""
+ },
+ "5ce6b76128": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Fin de la démo Une lanterne s'est allumée sur ton chemin.\"]]",
+  "qui": ""
+ },
+ "68c8b46624": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 4, \"exag\": 0.65, \"ref\": \"selim\"}||[[\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"], [\"fr\", \"Oum Nour !\"]]",
+  "qui": "Selim"
+ },
+ "6ff92e5aeb": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"La colombe s'envole au-dessus des toits.\"]]",
+  "qui": ""
+ },
+ "82d1580726": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Ce soir-là, le soleil descendait lentement derrière les palmiers…\"]]",
+  "qui": "Le conteur"
+ },
+ "8312c74bcd": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Le chameau, compagnon des caravanes. Il peut marcher des jours dans le désert sans boire.\"]]",
+  "qui": "Le chameau"
+ },
+ "89c89906c0": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Approche, mon petit. Je vais te raconter ce que mes yeux ont vu.\"]]",
+  "qui": "Le conteur"
+ },
+ "92b6351f15": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton âge.\"]]",
+  "qui": "Le conteur"
+ },
+ "96832c0cba": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 2, \"exag\": 0.55, \"ref\": \"voisine\"}||[[\"fr\", \"Tiens, prends ces dattes. Et n'oublie pas de dire\"], [\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"avant de manger.\"]]",
+  "qui": "Oumm Nour, la voisine"
+ },
+ "bda2779244": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": -1, \"exag\": 0.5, \"ref\": \"passant\"}||[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"]]",
+  "qui": "Un passant"
+ },
+ "c1df563fd3": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 4, \"exag\": 0.65, \"ref\": \"selim\"}||[[\"ar\", \"اقْرَأْ\"], [\"fr\", \"… Lis ! Al Amine, l'homme le plus honnête de la Mecque… Je veux comprendre ce qui se passe.\"]]",
+  "qui": "Selim"
+ },
+ "c4673e4aad": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Nous étions arrivés à Médine depuis quelques mois. J'avais vingt-deux ans.\"]]",
+  "qui": "Le conteur"
+ },
+ "cea9beeff0": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Pas tout. Mais beaucoup. Écoute bien… Tout commence à la Mecque, dans les ruelles de mon enfance.\"]]",
+  "qui": "Le conteur"
+ },
+ "d105a31df8": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Ce soir-là, toute Médine s'est levée pour prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.\"]]",
+  "qui": "Le conteur"
+ },
+ "d69fac45b6": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Les musulmans construisaient leur mosquée, et cherchaient comment s'appeler les uns les autres à la prière.\"]]",
+  "qui": "Le conteur"
+ },
+ "df15f5a645": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Et soudain, une voix s'est élevée au-dessus de la ville.\"]]",
+  "qui": "Le conteur"
+ },
+ "df2b4c467c": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 2, \"exag\": 0.55, \"ref\": \"voisine\"}||[[\"fr\", \"As-tu entendu ce que l'on raconte ? Mouhammad, fils de Abdallah\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"celui que toute la Mecque appelle Al Amine…\"]]",
+  "qui": "Oumm Nour, la voisine"
+ },
+ "f158d58ca9": {
+  "fp": "v1|{\"cfg\": 0.5, \"demi_tons\": 5, \"exag\": 0.6, \"ref\": \"enfant\"}||[[\"fr\", \"Tu as vraiment tout vu\"], [\"ar\", \"جَدِّي\"]]",
+  "qui": "L'enfant"
+ },
+ "f473a7a69e": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Ce matin-là, j'avais l'impression de voir ma ville pour la première fois.\"]]",
+  "qui": "Le conteur"
+ },
+ "fbb87b6998": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.45, \"ref\": \"conteur\"}||[[\"fr\", \"Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes partent vers le Yémen en hiver, et vers le Sham en été.\"]]",
+  "qui": "Le marché"
+ },
+ "fe62c74f8d": {
+  "fp": "v1|{\"cfg\": 0.4, \"demi_tons\": -3, \"exag\": 0.6, \"ref\": \"conteur\"}||[[\"fr\", \"Approche, mon petit. Assieds-toi près du feu… la nuit est douce.\"]]",
+  "qui": "Le conteur"
+ }
+}

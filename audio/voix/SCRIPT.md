@@ -35,7 +35,7 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | Fichier | Personnage | Réplique | Dit |
 |---|---|---|---|
 | `fe62c74f8d.ogg` | Le conteur | Approche, mon petit. Assieds-toi près du feu… la nuit est douce. | Approche, mon petit. Assieds-toi près du feu… la nuit est douce. |
-| `92b6351f15.ogg` | Le conteur | Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton âge. | Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton age. |
+| `92b6351f15.ogg` | Le conteur | Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton âge. | Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton âge. |
 | `f158d58ca9.ogg` | L'enfant | Tu as vraiment tout vu, Jaddî ? | Tu as vraiment tout vu · [ar] جَدِّي |
 | `cea9beeff0.ogg` | Le conteur | Pas tout. Mais beaucoup. Écoute bien… Tout commence à la Mecque, dans les ruelles de mon enfance. | Pas tout. Mais beaucoup. Écoute bien… Tout commence à la Mecque, dans les ruelles de mon enfance. |
 | `5cce0a8006.ogg` | Narration | Le feu crépite. Les lanternes se balancent doucement. | Le feu crépite. Les lanternes se balancent doucement. |
@@ -45,7 +45,7 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | Fichier | Personnage | Réplique | Dit |
 |---|---|---|---|
 | `5c64bbdedc.ogg` | Jabal an-Nour | Au loin, la montagne de la Lumière : Jabal an-Nour. Tout en haut se cache une petite grotte, la grotte de Hira. | Au loin, la montagne de la Lumière · [ar] جَبَلُ النُّور · . Tout en haut se cache une petite grotte, la grotte de Hira. |
-| `2e390c75b4.ogg` | La Kaaba | La Kaaba : la maison bâtie par Ibrâhîm et son fils Ismâʿîl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles. | La Kaaba : la maison batie par Ibrahim et son fils Ismaïl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles. |
+| `2e390c75b4.ogg` | La Kaaba | La Kaaba : la maison bâtie par Ibrâhîm et son fils Ismâʿîl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles. | La Kaaba : la maison bâtie par Ibrahim et son fils Ismaïl, paix sur eux, pour adorer Dieu, l'Unique. Mais en ce temps-là, les gens de la Mecque y avaient placé des idoles. |
 | `fbb87b6998.ogg` | Le marché | Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes partent vers le Yémen en hiver, et vers le Shâm en été. | Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes partent vers le Yémen en hiver, et vers le Sham en été. |
 | `4658c49107.ogg` | Le puits | Ici, aucune rivière : l'eau est précieuse. Près de la Kaaba coule la source de Zamzam, jaillie autrefois pour Hâjar et son fils Ismâʿîl. | Ici, aucune rivière : l'eau est précieuse. Près de la Kaaba coule la source de Zamzam, jaillie autrefois pour Hajar et son fils Ismaïl. |
 | `8312c74bcd.ogg` | Le chameau | Le chameau, compagnon des caravanes. Il peut marcher des jours dans le désert sans boire. | Le chameau, compagnon des caravanes. Il peut marcher des jours dans le désert sans boire. |
@@ -74,6 +74,6 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | `df15f5a645.ogg` | Le conteur | Et soudain, une voix s'est élevée au-dessus de la ville. | Et soudain, une voix s'est élevée au-dessus de la ville. |
 | `43fc5a0685.ogg` | Le conteur | C'était Bilal, radiyAllâhu ʿanhu. Cette voix… je l'entends encore. | C'était Bilal · [ar] رَضِيَ اللّٰهُ عَنْهُ · . Cette voix… je l'entends encore. |
 | `d105a31df8.ogg` | Le conteur | Ce soir-là, toute Médine s'est levée pour prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. | Ce soir-là, toute Médine s'est levée pour prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. |
-| `39e99c03ea.ogg` | Narration | Fin de la démo\nUne lanterne s'est allumée sur ton chemin. | Fin de la démo\nUne lanterne s'est allumée sur ton chemin. |
+| `5ce6b76128.ogg` | Narration | Fin de la démo Une lanterne s'est allumée sur ton chemin. | Fin de la démo Une lanterne s'est allumée sur ton chemin. |
 
 Total : 32 répliques.
