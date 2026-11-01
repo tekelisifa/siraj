@@ -1,8 +1,13 @@
-name: Essai accent arabe
+name: Essai voix
 
 # Essai ponctuel : produit des extraits « avant / après » dans la branche essai-accent.
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        description: "Script d'essai à lancer (dans tools/)"
+        required: false
+        default: "essai_accent.py"
 
 permissions:
   contents: write
@@ -35,7 +40,7 @@ jobs:
           pip install -q edge-tts
 
       - name: Générer les extraits
-        run: python3 tools/essai_accent.py
+        run: python3 tools/${{ github.event.inputs.script || 'essai_accent.py' }}
 
       - name: Publier dans la branche essai-accent
         run: |
@@ -47,5 +52,5 @@ jobs:
           rm -rf ./*
           cp -r /tmp/essai ./essai
           git add essai
-          git commit -q -m "Essai accent arabe : extraits avant / après"
+          git commit -q -m "Essai : extraits à comparer"
           git push -f -q origin essai-accent
