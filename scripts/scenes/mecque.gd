@@ -191,7 +191,7 @@ func _conversation() -> void:
 		await _box.say("Oumm Nour, la voisine", "Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi : Wa ʿalaykumu s-salâm !", ["wa_salam"])
 	else:
 		Game.add_word("wa_salam")
-		await _box.say("Selim", "Wa ʿalaykumu s-salâm, Oumm Nour !", ["wa_salam"])
+		await _box.say("Selim", "Wa ʿalaykumu s-salâm, Oumm Nour ! Oui, je me suis levé tôt ce matin.", ["wa_salam"])
 	await _box.say("Oumm Nour, la voisine", "Tiens, prends ces dattes. Et n'oublie pas de dire Bismillâh avant de manger.", ["bismillah"])
 	await _box.say("Selim", "Bismillâh… Mmm ! Alhamdulillâh !", ["bismillah", "alhamdulillah"])
 	await _box.say("Oumm Nour, la voisine", "[i](Elle baisse la voix.)[/i] As-tu entendu ce que l'on raconte ? Muhammad, fils de ʿAbdallâh ﷺ, celui que toute la Mecque appelle Al-Amîn…", ["amin"])
