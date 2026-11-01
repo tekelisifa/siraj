@@ -1,6 +1,6 @@
 {
  "0dda05bd72": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}||[[\"fr\", \"Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Djibril lui est apparu, et lui a dit\"], [\"ar\", \"اقْرَأْ\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Djibril lui est apparu, et lui a dit\"], [\"ar\", \"اقْرَأْ\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "2d222bc7e1": {
@@ -16,7 +16,7 @@
   "qui": ""
  },
  "310d6a9259": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}||[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"], [\"ar\", \"يَا سَلِيم\"], [\"fr\", \"! Tu es bien matinal aujourd'hui.\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"], [\"ar\", \"يَا سَلِيم\"], [\"fr\", \"! Tu es bien matinal aujourd'hui.\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "43fc5a0685": {
@@ -32,11 +32,11 @@
   "qui": ""
  },
  "491b2de90d": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}||[[\"fr\", \"Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi\"], [\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi\"], [\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "4da441db7c": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}||[[\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"… Mmm !\"], [\"ar\", \"الْحَمْدُ لِلّٰهِ\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"… Mmm !\"], [\"ar\", \"الْحَمْدُ لِلّٰهِ\"]]",
   "qui": "Selim"
  },
  "4fe32eb00f": {
@@ -56,7 +56,7 @@
   "qui": ""
  },
  "68c8b46624": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}||[[\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"], [\"fr\", \"Oum Nour !\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"], [\"fr\", \"Oum Nour !\"]]",
   "qui": "Selim"
  },
  "6ff92e5aeb": {
@@ -80,7 +80,7 @@
   "qui": "Le conteur"
  },
  "96832c0cba": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}||[[\"fr\", \"Tiens, prends ces dattes. Et n'oublie pas de dire\"], [\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"avant de manger.\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"Tiens, prends ces dattes. Et n'oublie pas de dire\"], [\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"avant de manger.\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "9f5c3f4292": {
@@ -96,7 +96,7 @@
   "qui": "Un passant"
  },
  "c1df563fd3": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}||[[\"ar\", \"اقْرَأْ\"], [\"fr\", \"… Lis ! Al Amine, l'homme le plus honnête de la Mecque… Je veux comprendre ce qui se passe.\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"اقْرَأْ\"], [\"fr\", \"… Lis ! Al Amine, l'homme le plus honnête de la Mecque… Je veux comprendre ce qui se passe.\"]]",
   "qui": "Selim"
  },
  "c4673e4aad": {
@@ -108,7 +108,7 @@
   "qui": "Le conteur"
  },
  "df2b4c467c": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}||[[\"fr\", \"As-tu entendu ce que l'on raconte ? Mouhammad, fils de Abdallah\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"celui que toute la Mecque appelle Al Amine…\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|e56b2616447f|[[\"fr\", \"As-tu entendu ce que l'on raconte ? Mouhammad, fils de Abdallah\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"celui que toute la Mecque appelle Al Amine…\"]]",
   "qui": "Oumm Nour, la voisine"
  },
  "df2d793877": {
@@ -124,7 +124,7 @@
   "qui": "Le conteur"
  },
  "f158d58ca9": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"enfant\", \"vitesse\": 1.0}||[[\"fr\", \"Tu as vraiment tout vu\"], [\"ar\", \"جَدِّي\"]]",
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"enfant\", \"vitesse\": 1.0}|1f5536835c44|[[\"fr\", \"Tu as vraiment tout vu\"], [\"ar\", \"جَدِّي\"]]",
   "qui": "L'enfant"
  },
  "f473a7a69e": {
