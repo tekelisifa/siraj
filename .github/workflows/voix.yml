@@ -37,6 +37,10 @@ jobs:
     steps:
       - name: Récupérer le code
         uses: actions/checkout@v4
+        with:
+          # Dernière version de main (et pas le commit déclencheur) : une génération
+          # mise en file d'attente repart des voix déjà créées par la précédente.
+          ref: main
 
       - name: Python 3.11
         uses: actions/setup-python@v5
