@@ -70,6 +70,20 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | `c6667dfdb3.ogg` | Le conteur | Encore jeune, il accompagna son oncle Abû Tâlib dans une caravane vers le Shâm, au nord. | Encore jeune, il accompagna son oncle Abou Talib dans une caravane vers le Sham, au nord. |
 | `ed8e90eaaf.ogg` | Le conteur | Un long voyage, de puits en puits. Le chemin exact des caravanes n'est pas connu : le trait est approximatif. | Un long voyage, de puits en puits. Le chemin exact des caravanes n'est pas connu : le trait est approximatif. |
 
+## Chapitre 3 · Al-Amîn
+
+| Fichier | Personnage | Réplique | Dit |
+|---|---|---|---|
+| `c288141b32.ogg` | Le conteur | L'enfant devint un jeune homme. À la Mecque, tout le monde lui faisait confiance : on l'appelait al-Amîn, le digne de confiance. | L'enfant devint un jeune homme. À la Mecque, tout le monde lui faisait confiance : on l'appelait al-Amîn, le digne de confiance. |
+| `0f75cf11c2.ogg` | Le conteur | Khadîja, une commerçante respectée, lui confia ses marchandises pour une caravane. | Khadija, une commerçante respectée, lui confia ses marchandises pour une caravane. |
+| `7c2b57b774.ogg` | Le conteur | Elle apprécia son honnêteté, et ils se marièrent. Il avait environ vingt-cinq ans, selon les récits. | Elle apprécia son honnêteté, et ils se marièrent. Il avait environ vingt-cinq ans, selon les récits. |
+| `3d75323190.ogg` | Le conteur | Des années plus tard, les Quraysh rebâtirent la Kaaba. Il portait lui-même des pierres, avec son oncle al-ʿAbbâs. | Des années plus tard, les Quraysh rebâtirent la Kaaba. Il portait lui-même des pierres, avec son oncle al-Abbas. |
+| `b2cdda4d9e.ogg` | Le conteur | C'est mon tout premier souvenir. J'avais environ cinq ans, sur les épaules de mon père, dans la foule. | C'est mon tout premier souvenir. J'avais environ cinq ans, sur les épaules de mon père, dans la foule. |
+| `814fb5c630.ogg` | Le conteur | Les clans se disputaient l'honneur de remettre la Pierre noire à sa place. On aurait pu en venir aux armes. | Les clans se disputaient l'honneur de remettre la Pierre noire à sa place. On aurait pu en venir aux armes. |
+| `ff8f49d3ef.ogg` | Le conteur | Il proposa de poser la pierre sur un manteau, et que les chefs de chaque clan le soulèvent ensemble. | Il proposa de poser la pierre sur un manteau, et que les chefs de chaque clan le soulèvent ensemble. |
+| `6be964a880.ogg` | Le conteur | Puis il remit lui-même la pierre à sa place. Tous étaient satisfaits, et la paix fut gardée. | Puis il remit lui-même la pierre à sa place. Tous étaient satisfaits, et la paix fut gardée. |
+| `f9928b18bd.ogg` | Le conteur | Je ne comprenais pas tout. Mais je me souviens du silence, puis des sourires. | Je ne comprenais pas tout. Mais je me souviens du silence, puis des sourires. |
+
 ## Épisode 1 · La Mecque, an 610
 
 | Fichier | Personnage | Réplique | Dit |
@@ -93,6 +107,23 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | `6ff92e5aeb.ogg` | Narration | La colombe s'envole au-dessus des toits. | La colombe s'envole au-dessus des toits. |
 | `bda2779244.ogg` | Un passant | As-salâmu ʿalaykum ! | [ar] السَّلَامُ عَلَيْكُمْ |
 
+## Chapitre 5 · L'appel sur as-Safâ
+
+| Fichier | Personnage | Réplique | Dit |
+|---|---|---|---|
+| `b0fd8594de.ogg` | Le conteur | Après Hira, le message ne fut pas crié dans les rues. Pendant environ trois ans, il passa discrètement, de personne à personne. | Après Hira, le message ne fut pas crié dans les rues. Pendant environ trois ans, il passa discrètement, de personne à personne. |
+| `abd2f2468f.ogg` | Le conteur | On raconte que les croyants se retrouvaient dans la maison d'al-Arqam, près de la colline d'as-Safâ. | On raconte que les croyants se retrouvaient dans la maison d'al-Arqam, près de la colline d'as-Safâ. |
+| `93306e4e9f.ogg` | Selim | Oumm Nour m'avait confié un petit paquet à porter de ce côté-là. Je ne savais pas encore ce qui s'y disait. | Oum Nour m'avait confié un petit paquet à porter de ce côté-là. Je ne savais pas encore ce qui s'y disait. |
+| `e756c5a0ec.ogg` | Le conteur | Un matin, le Prophète ﷺ monta sur la colline d'as-Safâ et appela, un à un, les clans de Quraysh. | Un matin, le Prophète · [ar] صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ · monta sur la colline d'as-Safâ et appela, un à un, les clans de Quraysh. |
+| `69b2122df4.ogg` | Selim | Les gens accouraient de partout. Je me suis glissé entre les grandes personnes pour voir. | Les gens accouraient de partout. Je me suis glissé entre les grandes personnes pour voir. |
+| `00c492b199.ogg` | Le conteur | Il leur demanda s'ils le croiraient s'il leur annonçait des cavaliers prêts à les attaquer, derrière la vallée. | Il leur demanda s'ils le croiraient s'il leur annonçait des cavaliers prêts à les attaquer, derrière la vallée. |
+| `4da044ecc9.ogg` | Le conteur | Ils répondirent qu'ils ne l'avaient jamais entendu mentir. Alors il les avertit d'un châtiment à venir s'ils n'adoraient pas Dieu seul. | Ils répondirent qu'ils ne l'avaient jamais entendu mentir. Alors il les avertit d'un châtiment à venir s'ils n'adoraient pas Dieu seul. |
+| `b42c6bf477.ogg` | Le conteur | Son propre oncle, Abû Lahab, le rejeta durement devant tous. Une sourate fut révélée à son sujet : al-Masad. | Son propre oncle, Abou Lahab, le rejeta durement devant tous. Une sourate fut révélée à son sujet : al-Masad. |
+| `599095ad9d.ogg` | Narration | Que fait Selim ? | Que fait Sélim ? |
+| `ecf07b034d.ogg` | Selim | Je suis resté. Les gens se disputaient. Moi, je pensais : « Il n'a jamais menti. Alors pourquoi mentirait-il aujourd'hui ? » | Je suis resté. Les gens se disputaient. Moi, je pensais : Il n'a jamais menti. Alors pourquoi mentirait-il aujourd'hui ? |
+| `b673de3a1e.ogg` | Oumm Nour, la voisine | Il ne ment jamais, mon garçon. Toute la Mecque le sait. Garde bien cela dans ton cœur. | Il ne ment jamais, mon garçon. Toute la Mecque le sait. Garde bien cela dans ton cœur. |
+| `dcc13e321a.ogg` | Le conteur | Ce jour-là, le message n'était plus un secret. Les épreuves allaient commencer. | Ce jour-là, le message n'était plus un secret. Les épreuves allaient commencer. |
+
 ## Épisode 1 · Médine, le premier adhan
 
 | Fichier | Personnage | Réplique | Dit |
@@ -110,4 +141,4 @@ Toutes les répliques du personnage sont alors régénérées avec ce timbre.
 | `5aa543c284.ogg` | Le conteur | Ce jour-là, beaucoup sont venus prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. | Ce jour-là, beaucoup sont venus prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel. |
 | `5ce6b76128.ogg` | Narration | Fin de la démo Une lanterne s'est allumée sur ton chemin. | Fin de la démo Une lanterne s'est allumée sur ton chemin. |
 
-Total : 56 répliques.
+Total : 77 répliques.
