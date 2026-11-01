@@ -3,6 +3,18 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"fr\", \"Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Djibril lui est apparu, et lui a dit\"], [\"ar\", \"اقْرَأْ\"]]",
   "qui": "Oumm Nour, la voisine"
  },
+ "19c475c42c": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Les Banou Sad vivaient sous la tente, loin des maisons de la Mecque. Sur la carte, leur pays n'est qu'une zone approximative.\"]]",
+  "qui": "Le conteur"
+ },
+ "1e3aa21c31": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Un jour, une armée arriva du sud, du Yémen. Avec elle marchait un éléphant.\"]]",
+  "qui": "Le conteur"
+ },
+ "293440696f": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Le petit Mouhammad\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"fut confié à une nourrice des Banou Sad : Halima.\"]]",
+  "qui": "Le conteur"
+ },
  "2d222bc7e1": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Au matin, il les raconta au Prophète\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \". Celui-ci dit que c'était un rêve vrai, et qu'il fallait les apprendre à Bilal, dont la voix portait plus loin.\"]]",
   "qui": "Le conteur"
@@ -18,6 +30,14 @@
  "310d6a9259": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"ar\", \"السَّلَامُ عَلَيْكُمْ\"], [\"ar\", \"يَا سَلِيم\"], [\"fr\", \"! Tu es bien matinal aujourd'hui.\"]]",
   "qui": "Oumm Nour, la voisine"
+ },
+ "3357d698bc": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"On raconte qu'arrivé près de la Mecque, l'éléphant refusa d'avancer vers la Kaaba.\"]]",
+  "qui": "Le conteur"
+ },
+ "33cbbf7876": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Son grand-père, Abd al-Muttalib, le prit avec lui. Puis, à la mort de son grand-père, ce fut son oncle, Abou Talib.\"]]",
+  "qui": "Le conteur"
  },
  "43fc5a0685": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"C'était Bilal\"], [\"ar\", \"رَضِيَ اللّٰهُ عَنْهُ\"], [\"fr\", \". Cette voix… je l'entends encore.\"]]",
@@ -35,17 +55,33 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.55, \"ref\": \"voisine\", \"vitesse\": 1.0}|32840df746ab|[[\"fr\", \"Ici, on se salue avec des mots de paix, mon garçon. Réponds-moi\"], [\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"]]",
   "qui": "Oumm Nour, la voisine"
  },
+ "4a2e4bd91f": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Il n'y avait pas encore de minaret. Bilal montait souvent appeler à l'aube depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banou an Nadjar.\"]]",
+  "qui": "Le conteur"
+ },
  "4da441db7c": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"بِسْمِ اللّٰهِ\"], [\"fr\", \"… Mmm !\"], [\"ar\", \"الْحَمْدُ لِلّٰهِ\"]]",
   "qui": "Selim"
+ },
+ "4f9afd9923": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Nous étions arrivés à Médine depuis quelques mois. J'avais environ vingt-deux ans.\"]]",
+  "qui": "Le conteur"
  },
  "4fe32eb00f": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce jour-là, mon petit, je ne savais pas encore que toute ma vie allait suivre ce murmure.\"]]",
   "qui": "Le conteur"
  },
+ "5aa543c284": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce jour-là, beaucoup sont venus prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.\"]]",
+  "qui": "Le conteur"
+ },
  "5c64bbdedc": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Au loin, la montagne de la Lumière\"], [\"ar\", \"جَبَلُ النُّور\"], [\"fr\", \". Tout en haut se cache une petite grotte, la grotte de Hira.\"]]",
   "qui": "Jabal an-Nour"
+ },
+ "5c9e78ca04": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Personne ne savait encore que cet enfant serait le dernier des prophètes.\"]]",
+  "qui": "Le conteur"
  },
  "5cce0a8006": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Le feu crépite. Les lanternes se balancent doucement.\"]]",
@@ -55,9 +91,21 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Fin de la démo Une lanterne s'est allumée sur ton chemin.\"]]",
   "qui": ""
  },
+ "6609f3c684": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Au désert, on apprenait tôt à garder les bêtes et à les mener à l'eau.\"]]",
+  "qui": "Le conteur"
+ },
  "68c8b46624": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"وَعَلَيْكُمُ السَّلَامُ\"], [\"fr\", \"Oum Nour !\"]]",
   "qui": "Selim"
+ },
+ "69746867e0": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Selon les récits, son chef s'appelait Abraha. Il voulait détruire la Kaaba.\"]]",
+  "qui": "Le conteur"
+ },
+ "6b5baeb06e": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"La Mecque était une petite ville au creux des montagnes, autour de la Kaaba.\"]]",
+  "qui": "Le conteur"
  },
  "6ff92e5aeb": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"La colombe s'envole au-dessus des toits.\"]]",
@@ -71,12 +119,28 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Mais comment appeler les gens à la prière ? Certains proposaient une cloche, d'autres une corne…\"]]",
   "qui": "Le conteur"
  },
+ "8834d728c9": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Environ huit cents kilomètres séparent Sanaa de la Mecque, à vol d'oiseau. Le chemin exact de l'armée, nous ne le connaissons pas.\"]]",
+  "qui": "Le conteur"
+ },
  "89c89906c0": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Approche, mon petit. Je vais te raconter ce que mes yeux ont vu.\"]]",
   "qui": "Le conteur"
  },
+ "8e46929f8a": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Orphelin très jeune, il ne fut jamais seul : les siens veillèrent sur lui.\"]]",
+  "qui": "Le conteur"
+ },
+ "923ecbe075": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"La Kaaba fut protégée. Depuis, on appelle cette année l'Année de l'Éléphant .\"]]",
+  "qui": "Le conteur"
+ },
  "92b6351f15": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Je vais te raconter ce que mes yeux ont vu, quand j'avais à peine ton âge.\"]]",
+  "qui": "Le conteur"
+ },
+ "96151217ce": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"À la Mecque, on confiait souvent les nourrissons à des nourrices du désert, où les enfants grandissaient au grand air.\"]]",
   "qui": "Le conteur"
  },
  "96832c0cba": {
@@ -87,8 +151,16 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Avec ses compagnons, le Prophète\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"], [\"fr\", \"avait bâti la mosquée : des murs de briques de terre, des troncs de palmiers pour piliers, et des palmes pour toit.\"]]",
   "qui": "Le conteur"
  },
- "b7011b0261": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Il n'y avait pas encore de minaret. Bilal avait l'habitude d'appeler depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banou an Nadjar.\"]]",
+ "aaca0af0de": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Pas tout. Mais beaucoup. Et ce que je n'ai pas vu, mes aînés me l'ont raconté. L'histoire commence avant ma naissance, à la Mecque…\"]]",
+  "qui": "Le conteur"
+ },
+ "adc082ed3f": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce que je vais te raconter, mon petit, je ne l'ai pas vu. Mes aînés me l'ont raconté, et le Coran en parle.\"]]",
+  "qui": "Le conteur"
+ },
+ "b52904c9bd": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Bien plus tard, il dira que tous les prophètes avaient gardé des moutons, et que lui aussi avait gardé ceux des gens de la Mecque.\"]]",
   "qui": "Le conteur"
  },
  "bda2779244": {
@@ -99,12 +171,12 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"selim\", \"vitesse\": 1.0}|1f5536835c44|[[\"ar\", \"اقْرَأْ\"], [\"fr\", \"… Lis ! Al Amine, l'homme le plus honnête de la Mecque… Je veux comprendre ce qui se passe.\"]]",
   "qui": "Selim"
  },
- "c4673e4aad": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Nous étions arrivés à Médine depuis quelques mois. J'avais vingt-deux ans.\"]]",
+ "c6667dfdb3": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Encore jeune, il accompagna son oncle Abou Talib dans une caravane vers le Sham, au nord.\"]]",
   "qui": "Le conteur"
  },
- "cea9beeff0": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Pas tout. Mais beaucoup. Écoute bien… Tout commence à la Mecque, dans les ruelles de mon enfance.\"]]",
+ "d971a3e73f": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Il était encore petit quand sa mère, Amina, mourut.\"]]",
   "qui": "Le conteur"
  },
  "df2b4c467c": {
@@ -115,28 +187,40 @@
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Une nuit, un compagnon, Abdallah ibn Zeyd, vit en rêve un homme qui lui apprit les paroles de l'appel.\"]]",
   "qui": "Le conteur"
  },
- "e7807854af": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce jour-là, toute Médine est venue prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.\"]]",
-  "qui": "Le conteur"
- },
  "ed2382bad6": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Et soudain, une voix s'éleva au-dessus de la ville, depuis un toit près de la mosquée.\"]]",
+  "qui": "Le conteur"
+ },
+ "ed8e90eaaf": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Un long voyage, de puits en puits. Le chemin exact des caravanes n'est pas connu : le trait est approximatif.\"]]",
+  "qui": "Le conteur"
+ },
+ "eda8a74428": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Son père, Abdallah, était mort avant sa naissance.\"]]",
+  "qui": "Le conteur"
+ },
+ "f0bb7374ae": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"On raconte aussi qu'en entendant l'appel, Umar sortit de chez lui : il avait vu la même chose en rêve.\"]]",
   "qui": "Le conteur"
  },
  "f158d58ca9": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.6, \"ref\": \"enfant\", \"vitesse\": 1.0}|1f5536835c44|[[\"fr\", \"Tu as vraiment tout vu\"], [\"ar\", \"جَدِّي\"]]",
   "qui": "L'enfant"
  },
+ "f260db26e6": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes voyagent l'hiver et l'été, vers le Yémen et vers le Sham.\"]]",
+  "qui": "Le marché"
+ },
  "f473a7a69e": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Ce matin-là, j'avais l'impression de voir ma ville pour la première fois.\"]]",
   "qui": "Le conteur"
  },
- "fbb87b6998": {
-  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.45, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Des dattes, du lait, des étoffes… La Mecque est une ville de marchands : ses caravanes partent vers le Yémen en hiver, et vers le Sham en été.\"]]",
-  "qui": "Le marché"
- },
  "fe62c74f8d": {
   "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Approche, mon petit. Assieds-toi près du feu… la nuit est douce.\"]]",
+  "qui": "Le conteur"
+ },
+ "ff76ab3053": {
+  "fp": "v2|{\"cfg\": 0.5, \"exag\": 0.5, \"ref\": \"conteur\", \"vitesse\": 1.08}|c0b2a40e7d19|[[\"fr\", \"Cette même année, à la Mecque, naquit un enfant du clan des Banou Hachim : Mouhammad\"], [\"ar\", \"صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ\"]]",
   "qui": "Le conteur"
  }
 }
