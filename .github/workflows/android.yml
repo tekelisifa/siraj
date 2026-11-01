@@ -47,10 +47,9 @@ jobs:
           echo "SDK Android : $SDK"
           ls "$SDK"
 
-          KS="$HOME/debug.keystore"
-          keytool -genkeypair -v -keystore "$KS" -storepass android -alias androiddebugkey \
-            -keypass android -keyalg RSA -keysize 2048 -validity 10000 \
-            -dname "CN=Android Debug,O=Android,C=US"
+          # Clé de signature fixe (versions d'aperçu seulement) : chaque nouvel APK peut
+          # s'installer par-dessus le précédent, sans conflit de signature.
+          KS="$PWD/build_keys/apercu-debug.keystore"
 
           for f in editor_settings-4.tres editor_settings-4.3.tres; do
             cat > ~/.config/godot/$f <<EOF
