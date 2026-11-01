@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# Une seule compilation à la fois : la plus récente remplace celle en attente.
+concurrency:
+  group: apk
+  cancel-in-progress: true
+
 env:
   GODOT_VERSION: "4.3"
 
