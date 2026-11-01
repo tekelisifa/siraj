@@ -106,6 +106,24 @@ async def edge(text, voice, rate, pitch, dest):
     await edge_tts.Communicate(text, voice, rate=rate, pitch=pitch).save(str(dest))
 
 
+def trim(wav, sr, db=-40.0, pad=0.03):
+    """Coupe les blancs au début et à la fin d'un morceau."""
+    import torch
+    x = wav[0]
+    hop = int(sr * 0.01)
+    if x.numel() < hop * 3:
+        return wav
+    frames = x[: x.numel() // hop * hop].reshape(-1, hop)
+    rms = frames.pow(2).mean(1).sqrt()
+    level = 20 * torch.log10(rms / (rms.max() + 1e-9) + 1e-9)
+    idx = (level > db).nonzero()
+    if idx.numel() == 0:
+        return wav
+    a = max(0, int(idx[0]) * hop - int(pad * sr))
+    b = min(x.numel(), (int(idx[-1]) + 1) * hop + int(pad * sr))
+    return wav[:, a:b]
+
+
 def to_mp3(src, dest, speed=1.0):
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(src),
                     "-af", f"atempo={speed:.3f},loudnorm=I=-18:TP=-2", "-ac", "1", "-ar", "44100",
@@ -165,6 +183,7 @@ def main():
                     wav_sr = vc.sr if ref else 24000
                     if wav_sr != sr:
                         wav = AF.resample(wav, wav_sr, sr)
+                wav = trim(wav, sr)
                 if pieces:
                     pieces.append(silence)
                 pieces.append(wav)
