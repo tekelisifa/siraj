@@ -146,7 +146,7 @@ func _story(root: Control) -> void:
 	_box.visible = false
 	await _remind_sound()
 	await _adhan()
-	await _box.say("Le conteur", "C'était Bilal, radiyAllâhu ʿanhu. Cette voix… je l'entends encore.", ["adhan"])
+	await _box.say("Le conteur", "C'était la voix de Bilal, radiyAllâhu ʿanhu. Cette voix… je l'entends encore.", ["adhan"])
 	await _box.say_ref("Le conteur", "Il n'y avait pas encore de minaret. Bilal montait souvent appeler à l'aube depuis le toit de la maison la plus haute autour de la mosquée, celle d'une femme des Banû an-Najjâr.", "abudawud:519")
 	await _box.say_ref("Le conteur", "On raconte aussi qu'en entendant l'appel, ʿUmar sortit de chez lui : il avait vu la même chose en rêve.", "abudawud:499")
 	await _box.say("Le conteur", "Ce jour-là, beaucoup sont venus prier. Et moi, j'ai compris que je ne voulais plus jamais être loin de cet appel.")

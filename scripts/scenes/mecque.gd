@@ -193,7 +193,7 @@ func _conversation() -> void:
 		Game.add_word("wa_salam")
 		await _box.say("Selim", "Wa ʿalaykumu s-salâm, Oumm Nour ! Oui, je me suis levé tôt ce matin.", ["wa_salam"])
 	await _box.say("Oumm Nour, la voisine", "Tiens, prends ces dattes. Et n'oublie pas de dire Bismillâh avant de manger.", ["bismillah"])
-	await _box.say("Selim", "Bismillâh… Mmm ! Alhamdulillâh !", ["bismillah", "alhamdulillah"])
+	await _box.say("Selim", "Bismillâh… Mmm, elles sont délicieuses ! Alhamdulillâh !", ["bismillah", "alhamdulillah"])
 	await _box.say("Oumm Nour, la voisine", "[i](Elle baisse la voix.)[/i] As-tu entendu ce que l'on raconte ? Muhammad, fils de ʿAbdallâh ﷺ, celui que toute la Mecque appelle Al-Amîn…", ["amin"])
 	await _box.say_ref("Oumm Nour, la voisine", "Il s'isolait pour prier dans la grotte de Hira. On dit que l'ange Jibrîl lui est apparu, et lui a dit : « Iqraʾ ! »", "bukhari:3", ["iqra"])
 	await _box.say("Selim", "Iqraʾ… « Lis ! »  Al-Amîn, l'homme le plus honnête de la Mecque… Je veux comprendre ce qui se passe.")
@@ -201,7 +201,7 @@ func _conversation() -> void:
 	_dove_leaves()
 	_box.show_text("", "[i]La colombe s'envole au-dessus des toits.[/i]")
 	await _box.ask(["Suivre la colombe"])
-	Transition.go("res://scenes/medine.tscn", Game.SAND_WARM, "Douze ans plus tard…")
+	Transition.go("res://scenes/a_suivre.tscn", Game.NIGHT_DEEP)
 
 
 # --- La colombe guide Selim ---
